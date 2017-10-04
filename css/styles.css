@@ -1,0 +1,514 @@
+body, div, h1, h2, h3, h4, h5, h6, p,
+i, ol, ul, li, footer, header {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+ol, ul {
+	list-style: none;
+}
+body {
+	font-size: 2.5vh;
+	line-height: 1;
+}
+button {
+	background-color: #008CBA;
+	border: none;
+	color: white;
+	padding: 10px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 1em;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+div.background {
+  background: url("../images/intercambio.jpg") no-repeat center;
+  background-size: cover;
+  height: 100vh;
+}
+div.container {
+	position: relative;
+	overflow: hidden;
+}
+/*---------- HEADER-------------*/
+.nav-bar {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  overflow: hidden;
+}
+.header .menu-btn {
+  display: none;
+}
+.h1_nav {
+	font-family: 'Kaushan Script', cursive;
+	font-size: 2em;
+	color: rgb(247, 204, 75);
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+a.logo{
+	text-decoration: none;
+	width: auto;
+	float: left;
+}
+div.header {
+	position: fixed;
+	width: 100%;
+	z-index: 100;
+	height: 50px;
+}
+nav.menu {
+	float: right;
+	width: auto;
+}
+header {
+	overflow: hidden;
+  width: 100%;
+	height: 50px;
+  border-bottom: 0.1px solid grey;
+	background-color: rgba(255, 255, 255, 0.9);
+}
+header.index img.logo {
+	z-index: 100;
+}
+header.index li {
+	margin-right:20px;
+	padding: 13px;
+	z-index: 100;
+}
+.index nav a {
+	text-decoration: none;
+	color: black;
+	font-size: 1.2em;
+}
+/*----------FIN HEADER-------------*/
+.cleaner{
+	clear: both;
+}
+/*----------PRIMERA SECCION-------------*/
+.home-first {
+	position: absolute;
+	top: 1%;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 60%;
+}
+.home-first h2 {
+	font-family: 'Kaushan Script';
+	font-size: 4.5em;
+	color: rgb(247, 204, 75);
+	margin-bottom: 10px;
+}
+.home-first h3 {
+	font-family: 'Kaushan Script';
+	font-size: 3em;
+	color: #FFF;
+}
+.formularioLogin {
+	text-align: center;
+	color: #000;
+}
+.formularioLogin p {
+	padding: 15px;
+	font-size: 1.5em;
+	font-family: 'Kaushan Script';
+	color: #000;
+}
+.formularioLogin {
+	background-color: rgba(189, 189, 189, 0.6);
+	height: 320px;
+	width: 30%;
+	border-radius: 15px;
+	box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+}
+.formularioLogin div input {
+	font-size: 1em;
+	width: 60%;
+	border-radius: 10px;
+}
+.formularioLogin input, textarea {
+  border: 1px solid #DDDDDD;
+}
+.formularioLogin input:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(247, 204, 75, 1);
+  margin: 5px 1px 3px 0px;
+}
+.formularioLogin a{
+	text-decoration: none;
+	color: #000;
+}
+/*----------FIN PRIMERA SECCION-------------*/
+
+/*----------SEGUNDA SECCION-------------*/
+.home-second {
+	height: 50vh;
+	width: 100%;
+	font-size: 2.5em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Kaushan Script';
+}
+.home-second h2 {
+	font-family: 'Kaushan Script';
+	font-size: 1.5em;
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+}
+.home-second p {
+	font-size: 0.5em;
+	line-height: 1.5;
+	font-family: sans-serif;
+	display: flex;
+	justify-content: center;
+	line-height: 2;
+}
+/*----------FIN SECCION-------------*/
+/*----------FOOTER-------------*/
+footer {
+	background-color: rgb(255, 255, 255);
+	padding: 3% 0;
+	padding-bottom: 0;
+	text-align: center;
+}
+footer a {
+	padding-right: 10px;
+	text-decoration: none;
+	color: #000;
+}
+.margin-bottom {
+	margin-bottom: 2%;
+}
+footer p.copyright {
+	padding: 10px;
+	background-color: grey;
+	opacity: 0.8;
+	color: white;
+}
+/*----------FIN FOOTER-------------*/
+/* ------------CONTACTO----------*/
+div.contacto {
+  height: 100vh;
+  background-image: url(../images/contacto.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.contact_background label {
+	font-size: 1.3em;
+}
+.contact_background h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+	font-family: 'Kaushan Script';
+	color: rgb(247, 204, 75);
+}
+.contact_form {
+  text-align: center;
+  padding-top:10%;
+  margin-right: 10%;
+  margin-left: 10%;
+  width: 80%;
+	font-family: 'Kaushan Script';
+	color: rgb(247, 204, 75);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.contact_background {
+  background-color: rgba(53, 74, 95, 0.58);
+  height: 60vh;
+  display: flex;
+	width: 40vw;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+	border-radius: 15px;
+	-webkit-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+}
+.contacto input, textarea {
+ padding: 3px 0px 3px 3px;
+ margin: 5px 1px 3px 0px;
+ border: 1px solid #DDDDDD;
+ border-radius: 10px;
+ font-size: 1em;
+}
+.contacto input:focus, textarea:focus {
+	box-shadow: 0 0 5px rgba(247, 204, 75, 1);
+  margin: 5px 1px 3px 0px;
+}
+.contacto label.comment {
+	margin-top: 5vh;
+}
+/* ----------FIN CONTACTO----------*/
+/* ------------ABOUT----------*/
+div.about {
+  height: 80vh;
+  background-image: url(../images/preguntas.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.about h3{
+	text-align: center;
+	font-family: 'Kaushan Script', cursive;
+	padding: 5px;
+	margin: 3px;
+	font-size: 2em;
+	color: rgb(247, 204, 75);
+}
+.faqs_container{
+	background-color: rgba(53, 74, 95, 0.58);
+  width: 40%;
+	margin: 0 30%;
+	margin-top: 15vh;
+  height: 80vh;
+  border-radius: 15px;
+	overflow: auto;
+	-webkit-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+ 	-moz-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+ 	box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+}
+.faqs_container details{
+  text-align: left;
+  padding: 5px;
+  font-family: Arial;
+  margin-bottom:5px;
+  width:auto;
+	text-align: center;
+}
+.faqs_container summary{
+	display: block;
+	font-weight: bold;
+  color: SteelBlue;
+  font-size: 1.2em;
+  cursor: pointer;
+	color: white;
+}
+.faqs_container p{
+		color: white;
+		font-size: 1em;
+}
+/* ------------FIN ABOUT----------*/
+/* ----------REGISTRO----------*/
+div.registro {
+	background: url("../images/bicicleta.jpg") no-repeat center;
+  background-size: cover;
+  height: 80vh;
+}
+section.formPage {
+	position: absolute;
+	top: 1%;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 70%;
+}
+.formularioRegistro {
+	text-align: center;
+}
+.formularioRegistro p {
+	padding: 15px;
+	font-size: 1.5em;
+	font-family: 'Kaushan Script';
+	color: #000;
+}
+.formularioRegistro {
+	background-color: rgba(189, 189, 189, 0.6);
+	height: 350px;
+	width: 30%;
+	border-radius: 15px;
+	box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+}
+.formularioRegistro div input {
+	font-size: 1em;
+	width: 60%;
+	border-radius: 10px;
+}
+.formularioRegistro input, textarea {
+  border: 1px solid #DDDDDD;
+}
+.formularioRegistro input:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(247, 204, 75, 1);
+  margin: 5px 1px 3px 0px;
+}
+/* --------FIN REGISTRO----------*/
+
+@media (max-width: 850px) {
+div.background {
+	  background-size: auto;
+	  height: 100vh;
+	}
+img.logo {
+	display: block;
+	width: 5vh;
+}
+.home-first {
+	flex-direction: column;
+	text-align: center;
+}
+.home-first h2 {
+	font-size: 2.5em;
+	margin-top: -10px;
+}
+.home-first h3 {
+	font-size: 2em;
+	color: #000;
+}
+.formularioLogin {
+	margin-top: -100px;
+	width: 70%;
+	height: 280px;
+}
+.home-first p {
+	font-size: 1.5em;
+}
+.home-first a {
+	font-size: 1.2em;
+}
+.home-first label{
+	font-size: 1.3em;
+}
+.home-second{
+	text-align: center;
+	overflow: visible;
+	margin-top: 30px;
+	margin-bottom: 100px;
+}
+/*--------HEADER----------*/
+.h1_nav {
+		margin-top: 5px;
+		margin-left: 15px;
+	}
+header nav {
+	  display: none;
+	}
+.menu-icon {
+		margin-top: 15px;
+		margin-right: 15px;
+	  cursor: pointer;
+	  display: inline-block;
+	  float: right;
+	  padding: 0;
+	  position: relative;
+	  user-select: none;
+	}
+.menu-icon .navicon {
+	  background: #333;
+	  display: block;
+	  height: 3px;
+	  position: relative;
+	  width: 30px;
+}
+.menu-icon .navicon:before,.menu-icon .navicon:after {
+	  background: #333;
+	  content: '';
+	  display: block;
+	  height: 100%;
+	  position: absolute;
+	  transition: all .2s ease-out;
+	  width: 100%;
+	}
+.menu-icon .navicon:before {
+	  top: 5px;
+	}
+.menu-icon .navicon:after {
+  top: -5px;
+}
+.menu-btn:checked ~ .menu {
+	display: block;
+  position: absolute;
+  top: 6vh;
+  float: right;
+  width: 30vh;
+  text-align: center;
+  height: 25vh;
+  background-color: rgba(38, 38, 38, 0.9);
+  right: 0;
+}
+.menu-btn:checked ~ ul {
+  height: 800px;
+}
+.menu-btn:checked ~ .menu li{
+  display: block;
+  float: none;
+  margin: 0;
+  padding-top: 5%;
+  font-size: 1.2em;
+}
+nav.menu a {
+  color: white;
+}
+.menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+.menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+.menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+img.logo {
+  display: block;
+  width: 5vh;
+}
+/*--------FIN HEADER----------*/
+/*--------CONTACT----------*/
+.contact_background {
+	margin-top: 5vh;
+	height: 70vh;
+	margin-bottom: 0;
+}
+.contacto textarea {
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+/*--------FIN CONTACT----------*/
+/*--------REGISTRO----------*/
+.formularioRegistro {
+	margin-top: 50px;
+	width: 90%;
+}
+.registro_login {
+	display: none;
+}
+/*--------FIN REGISTRO----------*/
+/*--------ABOUT----------*/
+.faqs_container{
+	background-color: rgba(53, 74, 95, 0.58);
+  width: 90%;
+	margin: 0 5%;
+	margin-top: 15vh;
+  height: 80vh;
+  border-radius: 15px;
+	overflow: auto;
+}
+/*--------FIN ABOUT----------*/
+/*--------CONTACTO----------*/
+.contact_background {
+	width: 90vw;
+}
+/*------FIN CONTACTO-------*/
+
+}
