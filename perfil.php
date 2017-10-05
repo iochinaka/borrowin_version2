@@ -11,7 +11,7 @@
   <body>
     <div class="container">
 
-      <div class="">
+      <div class="backgroundIndex">
       <?php include('headerlogin.php');?>
       </div>
         <p>Login Exitoso</p>
