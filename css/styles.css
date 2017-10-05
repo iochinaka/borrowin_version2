@@ -1,50 +1,40 @@
-body, div, h1, h2, h3, h4, h5, h6, p,
-i, ol, ul, li, footer, header {
+*{
+	box-sizing: border-box;
 	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
 }
 ol, ul {
 	list-style: none;
 }
 body {
-	font-size: 2.5vh;
 	line-height: 1;
 }
 button {
 	background-color: #008CBA;
 	border: none;
 	color: white;
-	padding: 10px 32px;
+	padding: 10px 50px;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
 	font-size: 1em;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
+	border-radius: 15px;
 }
-div.background {
+.background {
   background: url("../images/intercambio.jpg") no-repeat center;
   background-size: cover;
   height: 100vh;
 }
-div.container {
+.container {
 	position: relative;
 	overflow: hidden;
+}
+.stroke {
+-webkit-text-stroke: 1.5px white;
 }
 /*---------- HEADER-------------*/
 .nav-bar {
   display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px transparent;
-  position: relative;
-  overflow: hidden;
+	text-align: center;
 }
 .header .menu-btn {
   display: none;
@@ -53,21 +43,19 @@ div.container {
 	font-family: 'Kaushan Script', cursive;
 	font-size: 2em;
 	color: rgb(247, 204, 75);
-	text-align: center;
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	margin-top: 10px;
 }
 a.logo{
 	text-decoration: none;
 	width: auto;
 	float: left;
 }
-div.header {
+.header {
 	position: fixed;
 	width: 100%;
-	z-index: 100;
-	height: 50px;
+	z-index: 10;
 }
 nav.menu {
 	float: right;
@@ -76,128 +64,113 @@ nav.menu {
 header {
 	overflow: hidden;
   width: 100%;
-	height: 50px;
+	height: 60px;
   border-bottom: 0.1px solid grey;
-	background-color: rgba(255, 255, 255, 0.9);
-}
-header.index img.logo {
-	z-index: 100;
+	background-color: rgba(0, 0, 0, 0.9);
 }
 header.index li {
-	margin-right:20px;
-	padding: 13px;
-	z-index: 100;
+	margin-right:50px;
+	padding: 20px;
 }
 .index nav a {
 	text-decoration: none;
-	color: black;
-	font-size: 1.2em;
+	color: white;
+	font-size: 1em;
+	font-family: sans-serif;
 }
 /*----------FIN HEADER-------------*/
-.cleaner{
-	clear: both;
-}
-/*----------PRIMERA SECCION-------------*/
-.home-first {
+/*----------CABECERA-------------*/
+.cabecera-index {
 	position: absolute;
-	top: 1%;
+	top: 10%;
 	width: 100%;
 	display: flex;
+	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-	height: 60%;
+	height: 90%;
 }
-.home-first h2 {
+.cabecera-index h2 {
 	font-family: 'Kaushan Script';
 	font-size: 4.5em;
 	color: rgb(247, 204, 75);
 	margin-bottom: 10px;
 }
-.home-first h3 {
+.cabecera-index h3 {
 	font-family: 'Kaushan Script';
 	font-size: 3em;
 	color: #FFF;
 }
-.formularioLogin {
+.formLogin {
 	text-align: center;
 	color: #000;
+	background-color: rgba(53, 74, 95, 0.58);
+	padding: 10px;
+	width: 30%;
+	max-width: 300px;
+	border-radius: 15px;
+	box-shadow: 0px 0px 20px 5px rgba(0,10,20,0.90);
 }
-.formularioLogin p {
-	padding: 15px;
+.formLogin p {
+	padding: 10px;
 	font-size: 1.5em;
 	font-family: 'Kaushan Script';
 	color: #000;
 }
-.formularioLogin {
-	background-color: rgba(189, 189, 189, 0.6);
-	height: 320px;
-	width: 30%;
-	border-radius: 15px;
-	box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
-}
-.formularioLogin div input {
+.formLogin div input {
 	font-size: 1em;
 	width: 60%;
 	border-radius: 10px;
 }
-.formularioLogin input, textarea {
-  border: 1px solid #DDDDDD;
+.formLogin input{
+	margin-top: 2%;
+	border: 1px solid #DDDDDD;
 }
-.formularioLogin input:focus, textarea:focus {
+.formLogin input:focus{
   box-shadow: 0 0 5px rgba(247, 204, 75, 1);
-  margin: 5px 1px 3px 0px;
 }
-.formularioLogin a{
+.formLogin a{
 	text-decoration: none;
 	color: #000;
 }
-/*----------FIN PRIMERA SECCION-------------*/
-
-/*----------SEGUNDA SECCION-------------*/
-.home-second {
-	height: 50vh;
-	width: 100%;
-	font-size: 2.5em;
+/*----------FIN CABECERA-------------*/
+/*----------CUERPO-------------*/
+.cuerpo-index {
+	margin-top: 50px;
+	font-size: 2em;
 	display: flex;
-	align-items: center;
 	justify-content: center;
+	flex-direction: column;
 	font-family: 'Kaushan Script';
 }
-.home-second h2 {
+.cuerpo-index h2 {
 	font-family: 'Kaushan Script';
 	font-size: 1.5em;
-	display: flex;
-	justify-content: center;
-	margin-top: 10px;
+	text-align: center;
 }
-.home-second p {
-	font-size: 0.5em;
-	line-height: 1.5;
-	font-family: sans-serif;
-	display: flex;
-	justify-content: center;
+.cuerpo-index p {
+	font-size: 0.6em;
+	text-align: center;
+	font-family: 'Marvel',sans-serif;
 	line-height: 2;
 }
-/*----------FIN SECCION-------------*/
+/*----------CUERPO-------------*/
 /*----------FOOTER-------------*/
 footer {
-	background-color: rgb(255, 255, 255);
-	padding: 3% 0;
+	padding: 2% 0;
 	padding-bottom: 0;
 	text-align: center;
 }
 footer a {
-	padding-right: 10px;
 	text-decoration: none;
 	color: #000;
 }
 .margin-bottom {
-	margin-bottom: 2%;
+	margin-bottom: 10px;
 }
-footer p.copyright {
+.footerlast {
 	padding: 10px;
-	background-color: grey;
-	opacity: 0.8;
+	background-color: rgba(0, 0, 0, 0.9);
 	color: white;
 }
 /*----------FIN FOOTER-------------*/
@@ -229,7 +202,7 @@ div.contacto {
 	justify-content: center;
 	align-items: center;
 }
-.contact_background {
+.backgroundContactForm {
   background-color: rgba(53, 74, 95, 0.58);
   height: 60vh;
   display: flex;
@@ -238,80 +211,77 @@ div.contacto {
   align-items: center;
   flex-direction: column;
 	border-radius: 15px;
-	-webkit-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
-	box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 20px 5px rgba(0,10,20,0.90);
 }
-.contacto input, textarea {
- padding: 3px 0px 3px 3px;
- margin: 5px 1px 3px 0px;
+.contacto input, textarea{
+ margin-top: 5px;
+ margin-bottom: 5px;
  border: 1px solid #DDDDDD;
  border-radius: 10px;
  font-size: 1em;
+ width: 80%;
 }
-.contacto input:focus, textarea:focus {
+textarea {
+	height: 6em;
+	width: 60%;
+}
+.contacto input:focus, textarea:focus{
 	box-shadow: 0 0 5px rgba(247, 204, 75, 1);
-  margin: 5px 1px 3px 0px;
-}
-.contacto label.comment {
-	margin-top: 5vh;
 }
 /* ----------FIN CONTACTO----------*/
 /* ------------ABOUT----------*/
-div.about {
+.about {
   height: 80vh;
   background-image: url(../images/preguntas.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 .about h3{
+	margin-top: 30px;
 	text-align: center;
 	font-family: 'Kaushan Script', cursive;
-	padding: 5px;
-	margin: 3px;
+	margin-bottom: 10px;
 	font-size: 2em;
 	color: rgb(247, 204, 75);
 }
-.faqs_container{
+.about_container{
 	background-color: rgba(53, 74, 95, 0.58);
   width: 40%;
 	margin: 0 30%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	margin-top: 15vh;
   height: 80vh;
   border-radius: 15px;
 	overflow: auto;
-	-webkit-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
- 	-moz-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
- 	box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 20px 5px rgba(0,10,20,0.90);
 }
-.faqs_container details{
-  text-align: left;
+.about_container details{
   padding: 5px;
   font-family: Arial;
   margin-bottom:5px;
   width:auto;
 	text-align: center;
 }
-.faqs_container summary{
+.about_container summary{
 	display: block;
-	font-weight: bold;
-  color: SteelBlue;
   font-size: 1.2em;
   cursor: pointer;
 	color: white;
 }
-.faqs_container p{
+.about_container p{
 		color: white;
 		font-size: 1em;
 }
 /* ------------FIN ABOUT----------*/
 /* ----------REGISTRO----------*/
-div.registro {
+.registro {
 	background: url("../images/bicicleta.jpg") no-repeat center;
   background-size: cover;
-  height: 80vh;
+  height: 100vh;
 }
-section.formPage {
+.formPage {
 	position: absolute;
 	top: 1%;
 	width: 100%;
@@ -320,104 +290,109 @@ section.formPage {
 	align-items: center;
 	height: 70%;
 }
-.formularioRegistro {
+.formRegistro {
 	text-align: center;
+	margin-top: 30%;
 }
-.formularioRegistro p {
+.formRegistro p {
 	padding: 15px;
 	font-size: 1.5em;
 	font-family: 'Kaushan Script';
 	color: #000;
 }
-.formularioRegistro {
+.formRegistro {
 	background-color: rgba(189, 189, 189, 0.6);
-	height: 350px;
+	height: 400px;
 	width: 30%;
 	border-radius: 15px;
 	box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
 }
-.formularioRegistro div input {
+.formRegistro div input {
 	font-size: 1em;
 	width: 60%;
 	border-radius: 10px;
 }
-.formularioRegistro input, textarea {
+.formRegistro input, textarea {
   border: 1px solid #DDDDDD;
 }
-.formularioRegistro input:focus, textarea:focus {
+.formRegistro input:focus, textarea:focus {
   box-shadow: 0 0 5px rgba(247, 204, 75, 1);
   margin: 5px 1px 3px 0px;
 }
-/* --------FIN REGISTRO----------*/
-
-@media (max-width: 850px) {
-div.background {
-	  background-size: auto;
-	  height: 100vh;
-	}
-img.logo {
-	display: block;
-	width: 5vh;
+.formRegistro a{
+	text-decoration: none;
+	color: #000;
 }
-.home-first {
+.texto-registro{
+	top: 10%;
+	margin-top: 30%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	height: 90%;
+}
+.texto-registro h3{
+	font-family: 'Kaushan Script';
+	font-size: 4.5em;
+	color: #008CBA;
+}
+.texto-registro p{
+	font-size: 3.5em;
+	color: #FFF;
+	text-shadow: -1px -1px 1px #000;
+}
+/* --------FIN REGISTRO----------*/
+@media (max-width: 850px) {
+.cabecera-index {
 	flex-direction: column;
 	text-align: center;
 }
-.home-first h2 {
+.cabecera-index h2 {
 	font-size: 2.5em;
-	margin-top: -10px;
 }
-.home-first h3 {
+.cabecera-index h3 {
 	font-size: 2em;
 	color: #000;
 }
-.formularioLogin {
-	margin-top: -100px;
+.formLogin {
 	width: 70%;
-	height: 280px;
 }
-.home-first p {
+.cabecera-index p {
 	font-size: 1.5em;
 }
-.home-first a {
+.cabecera-index a {
 	font-size: 1.2em;
 }
-.home-first label{
+.cabecera-index label{
 	font-size: 1.3em;
-}
-.home-second{
-	text-align: center;
-	overflow: visible;
-	margin-top: 30px;
-	margin-bottom: 100px;
 }
 /*--------HEADER----------*/
 .h1_nav {
 		margin-top: 5px;
 		margin-left: 15px;
 	}
-header nav {
-	  display: none;
-	}
 .menu-icon {
-		margin-top: 15px;
+		margin-top: 30px;
 		margin-right: 15px;
 	  cursor: pointer;
 	  display: inline-block;
 	  float: right;
 	  padding: 0;
 	  position: relative;
-	  user-select: none;
+	}
+header nav{
+		display: none;
 	}
 .menu-icon .navicon {
-	  background: #333;
+	  background: #fff;
 	  display: block;
 	  height: 3px;
 	  position: relative;
 	  width: 30px;
 }
 .menu-icon .navicon:before,.menu-icon .navicon:after {
-	  background: #333;
+	  background: #fff;
 	  content: '';
 	  display: block;
 	  height: 100%;
@@ -434,13 +409,13 @@ header nav {
 .menu-btn:checked ~ .menu {
 	display: block;
   position: absolute;
-  top: 6vh;
-  float: right;
-  width: 30vh;
-  text-align: center;
-  height: 25vh;
-  background-color: rgba(38, 38, 38, 0.9);
+  top: 10vh;
+  width: auto;
+	max-width: 200px;
+  background-color: rgba(0, 0, 0, 0.9);
   right: 0;
+	border-radius: 15px;
+	box-shadow: 0px 0px 20px 5px rgba(0,10,20,0.90);
 }
 .menu-btn:checked ~ ul {
   height: 800px;
@@ -451,9 +426,6 @@ header nav {
   margin: 0;
   padding-top: 5%;
   font-size: 1.2em;
-}
-nav.menu a {
-  color: white;
 }
 .menu-btn:checked ~ .menu-icon .navicon {
   background: transparent;
@@ -468,47 +440,34 @@ nav.menu a {
 .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
   top: 0;
 }
-img.logo {
-  display: block;
-  width: 5vh;
-}
 /*--------FIN HEADER----------*/
 /*--------CONTACT----------*/
-.contact_background {
+.backgroundContactForm {
 	margin-top: 5vh;
 	height: 70vh;
 	margin-bottom: 0;
+	width: 90vw;
 }
 .contacto textarea {
-	width: 90%;
-	margin-left: 5%;
-	margin-right: 5%;
+	min-width:180px;
 }
 /*--------FIN CONTACT----------*/
 /*--------REGISTRO----------*/
-.formularioRegistro {
-	margin-top: 50px;
+.formRegistro {
+	margin-top: 30%;
 	width: 90%;
 }
-.registro_login {
+.texto-registro {
+	margin-top: 30%;
 	display: none;
 }
 /*--------FIN REGISTRO----------*/
 /*--------ABOUT----------*/
-.faqs_container{
-	background-color: rgba(53, 74, 95, 0.58);
-  width: 90%;
+.about_container{
+	width:90%;
 	margin: 0 5%;
 	margin-top: 15vh;
-  height: 80vh;
-  border-radius: 15px;
-	overflow: auto;
 }
 /*--------FIN ABOUT----------*/
-/*--------CONTACTO----------*/
-.contact_background {
-	width: 90vw;
-}
-/*------FIN CONTACTO-------*/
 
 }

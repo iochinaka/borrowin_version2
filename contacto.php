@@ -9,34 +9,34 @@
   </head>
   <body>
     <div class="container">
-      <div class="header">
+      <div class="">
         <?php include('header.php') ?>
       </div>
 
       <div class="contacto">
         <div class="contact_form">
-          <div class="contact_background">
+          <div class="backgroundContactForm">
             <h2>Contactate con nosotros</h2>
             <form class="contacto" action="index.html" method="post">
-              <label for="name">Nombre</label>
+              <label for="name">Nombre</label><br>
               <input id="name" type="text" name="name" value="">
               <br>
-              <label for="email">E-mail </label>
+              <label for="email">E-mail </label><br>
               <input id="email" type="text" name="email" value="">
               <br>
             </form>
             <label class="comment" for="comment">Mensaje</label>
-            <textarea name="comment" rows="5" cols="40"></textarea>
+            <textarea></textarea>
             <button type="submit" name="button">Enviar</button>
           </div>
         </div>
       </div>
     </div>
 
-      <footer class="">
+    <footer class="">
         <img class="margin-bottom" src="images/logo.svg" alt="" width="70px">
-        <p class="margin-bottom"><a href="#">Terminos & Condiciones</a><a href="#">Copyrights</a></p>
-        <p class="copyright">Borrowin 2017 All Rights Reserved.</p>
-      </footer>
+        <p class="margin-bottom"><a href="#">Condiciones de uso</a></p>
+        <p class="footerlast">Borrowin 2017</p>
+    </footer>
   </body>
 </html>

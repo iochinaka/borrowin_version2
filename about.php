@@ -8,14 +8,13 @@
     <title>Preguntas frecuentes</title>
   </head>
   <body>
-
 <div class="container">
   <div class="header">
     <?php include('header.php') ?>
   </div>
 
   <div class="about">
-    <article class="faqs_container">
+    <article class="about_container">
     <h3>Preguntas Frecuentes</h3>
       <details>
         <summary>¿Qué es Borrowin?</summary>
@@ -86,9 +85,9 @@
 </div>
 
 <footer class="">
-  <img class="margin-bottom" src="images/logo.svg" alt="" width="70px">
-  <p class="margin-bottom"><a href="#">Terminos & Condiciones</a><a href="#">Copyrights</a></p>
-  <p class="copyright">Borrowin 2017 All Rights Reserved.</p>
+    <img class="margin-bottom" src="images/logo.svg" alt="" width="70px">
+    <p class="margin-bottom"><a href="#">Condiciones de uso</a></p>
+    <p class="footerlast">Borrowin 2017</p>
 </footer>
 
   </body>

@@ -31,23 +31,20 @@ if (isset($_POST['enviar'])) {
       <div class="background">
       <?php include('header.php');?>
       </div>
-
-      
-      <section class="home-first">
+      <div class="cabecera-index">
         <div>
           <h2>Prestalo con GANAS</h2>
           <h3>Lo queres, lo pedis, lo tenes!</h3>
         </div>
-        <div class="formularioLogin">
+        <div class="formLogin">
           <p>Inicia Sesion</p>
-          <form class="logIn" action="index.php" method="post">
+          <form action="index.php" method="post">
             <div>
               <label for="usuario">Nombre de Usuario</label>
               <br>
               <input id="usuario" type="text" name="usuario" required value='<?php echo $usuario ?>'>
               <br>
               <?php if (isset($errores['usuario_error'])){echo $errores['usuario_error'];}?><br/>
-              <br>
               <label for="clave">Contraseña</label>
               <br>
               <input id="clave" type="password" name="clave" required value="">
@@ -64,26 +61,27 @@ if (isset($_POST['enviar'])) {
             <a href="formulario.php">¿No estás registrado? Crea tu cuenta.</a>
           </form>
         </div>
-      </section>
+      </div>
+    </div>
 
-
-    <section class="home-second">
+    <div class="container">
+    <div class="cuerpo-index">
       <div>
         <h2>¿Qué es Borrowin?</h2>
         <br>
-        <p>Es una red social de prestamos entre amigos!</p>
-        <p>Imagina que necesitas algo, y no queres comprarlo, ¿Algún amigo tuyo podría tenerlo?</p>
-        <p>Es cuestión de pedirlo, buscarlo, usarlo y luego devolverlo.</p>
-        <p>Esa bicicleta que necesitas este fin de semana, o ese libro que queres leer,</p>
-        <p>estan al alcance de la mano. Y claro, vos también podes prestar</p>
+        <p>Es una red social de prestamos entre amigos!<br>
+        Imagina que necesitas algo, y no queres comprarlo, ¿Algún amigo tuyo podría tenerlo?<br>
+        Es cuestión de pedirlo, buscarlo, usarlo y luego devolverlo.<br>
+        Esa bicicleta que necesitas este fin de semana, o ese libro que queres leer,<br>
+        estan al alcance de la mano. Y claro, vos también podes prestar</p>
       </div>
-    </section>
-
     </div>
+    </div>
+
     <footer class="">
       <img class="margin-bottom" src="images/logo.svg" alt="" width="70px">
-      <p class="margin-bottom"><a href="#">Terminos & Condiciones</a><a href="#">Copyrights</a></p>
-      <p class="copyright">Borrowin 2017 All Rights Reserved.</p>
+      <p class="margin-bottom"><a href="#">Condiciones de uso</a></p>
+      <p class="footerlast">Borrowin 2017</p>
     </footer>
   </body>
 </html>

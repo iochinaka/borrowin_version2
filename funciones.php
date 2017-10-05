@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 // funciones globales
 function existe ($archivo){
 if (file_exists($archivo)){

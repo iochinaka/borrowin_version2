@@ -5,16 +5,6 @@ require_once('funciones.php');
     $clave2= isset ($_POST['clave2'])? $_POST['clave2'] : null;
     $errores= array();
 
-    if (isset($_POST['enviar'])) {
-        if (!buscar_usuario_login($usuario,$clave)){
-          $errores['usuario_error']="Usuario o clave incorrecta";
-        }
-        $linea=buscar_usuario_login($usuario,$clave);
-        if (count($errores)==0){
-          session_start();
-          header('Location: perfil.php');
-        }
-        }
     if (isset($_POST['registrar'])) {
         if ($clave !==$clave2) {
         $errores['claves_distintas']="Las contraseñas son distintas";
@@ -46,8 +36,8 @@ require_once('funciones.php');
       <?php include('header.php') ?>
       </div>
 
-      <section class="formPage">
-        <div class="formularioRegistro">
+      <div class="formPage">
+        <div class="formRegistro">
           <p>Registrate</p>
           <form class="" action="formulario.php" method="post" enctype="multipart/form-data">
             <div>
@@ -71,39 +61,20 @@ require_once('funciones.php');
             <button type="submit" name="registrar" value="">Registrar</button>
             <br>
             <?php if (isset($errores['usuario_existe'])){echo $errores['usuario_existe'];}?>
+            <a href="index.php">¿Ya estás registrado?</a>
           </form>
         </div>
-        <div class="formularioLogin registro_login">
-          <p>Inicia Sesion</p>
-          <form class="" action="formulario.php" method="post" enctype="multipart/form-data">
-            <div>
-              <label for="usuario">Nombre de Usuario</label>
-              <br>
-              <input id="usuario" type="text" name="usuario" required value='<?php echo $usuario ?>'>
-              <br>
-              <?php if (isset($errores['usuario_error'])){echo $errores['usuario_error'];}?><br/>
-              <br>
-              <label for="clave">Contraseña</label>
-              <br>
-              <input id="clave" type="password" name="clave" required value="">
-              <br>
-              <?php if (isset($errores['clave_error'])){echo $errores['clave_error'];}?><br/>
-            </div>
-            <input id="recordarme" type="checkbox" name="recordarme" value="yes">
-            <label for="recordarme">Recordarme</label>
-            <br><br>
-            <button type="submit" name="enviar" value="">Enviar</button>
-            <br>
-            <a href="#">¿Has olvidado tu contraseña?</a>
-          </form>
+        <div class="texto-registro">
+          <h3 class="stroke">Borrowin</h3>
+          <p>Te ayuda a buscar lo que <br>necesitas <br>Pedí, busca, usa, y devolvé<br></p>
         </div>
-      </section>
+      </div>
+</div>
 
-
-      <footer class="">
+    <footer class="">
         <img class="margin-bottom" src="images/logo.svg" alt="" width="70px">
-        <p class="margin-bottom"><a href="#">Terminos & Condiciones</a><a href="#">Copyrights</a></p>
-        <p class="copyright">Borrowin 2017 All Rights Reserved.</p>
-      </footer>
+        <p class="margin-bottom"><a href="#">Condiciones de uso</a></p>
+        <p class="footerlast">Borrowin 2017</p>
+    </footer>
   </body>
 </html>

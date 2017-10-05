@@ -11,17 +11,18 @@
   <body>
     <div class="container">
 
-      <div class="background">
-      <?php include('header.php');?>
+      <div class="">
+      <?php include('headerlogin.php');?>
       </div>
         <p>Login Exitoso</p>
-      </div>
+
+    </div>
 
 
-      <footer class="">
-        <img class="margin-bottom" src="images/logo.svg" alt="" width="70px">
-        <p class="margin-bottom"><a href="#">Terminos & Condiciones</a><a href="#">Copyrights</a></p>
-        <p class="copyright">Borrowin 2017 All Rights Reserved.</p>
-      </footer>
+    <footer class="">
+      <img class="margin-bottom" src="images/logo.svg" alt="" width="70px">
+      <p class="margin-bottom"><a href="#">Condiciones de uso</a></p>
+      <p class="footerlast">Borrowin 2017</p>
+    </footer>
   </body>
 </html>
