@@ -10,6 +10,7 @@ if (isset($_POST['enviar'])) {
     $linea=buscar_usuario_login($usuario,$clave);
     if (count($errores)==0){
       session_start();
+      $_SESSION['user'] = $usuario;
       header('Location: perfil.php');
     }
 }
@@ -61,7 +62,7 @@ if (isset($_POST['enviar'])) {
             <a href="formulario.php">¿No estás registrado? Crea tu cuenta.</a>
           </form>
         </div>
-      </div>
+    </div>
 
     <div class="cuerpo-index">
         <h2>¿Qué es Borrowin?</h2>

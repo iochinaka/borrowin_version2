@@ -11,11 +11,12 @@
   <body>
     <div class="container">
 
-      <div class="backgroundIndex">
+      <div class="backgroundPerfil">
       <?php include('headerlogin.php');?>
       </div>
-        <p>Login Exitoso</p>
-
+        <div class="cabecera-index">
+          <h2>Login Exitoso</h2>
+        </div>
     </div>
 
 

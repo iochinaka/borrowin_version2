@@ -31,10 +31,19 @@ button {
   display: inline-block;
 	text-align: center;
 }
+.profile-img{
+	float: right;
+	border-radius: 50%;
+	vertical-align: middle;
+	margin-right: 2em;
+	padding: 5px;
+	height: 50px;
+	width: 50px;
+}
 .header .menu-btn {
   display: none;
 }
-.h1_nav {
+.title-nav {
 	font-family: 'Kaushan Script', cursive;
 	font-size: 2em;
 	color: rgb(247, 204, 75);
@@ -67,6 +76,9 @@ header.index li {
 	margin-right:50px;
 	padding: 20px;
 }
+#closeSesion{
+	margin-right: 10px;
+}
 .index nav a {
 	text-decoration: none;
 	color: white;
@@ -74,7 +86,7 @@ header.index li {
 	font-family: sans-serif;
 }
 /*----------FIN HEADER-------------*/
-/*----------CABECERA-------------*/
+/*----------INDEX-------------*/
 .backgroundIndex {
   background: url("../images/intercambio.jpg");
 	background-repeat: no-repeat;
@@ -132,8 +144,6 @@ header.index li {
 	text-decoration: none;
 	color: #000;
 }
-/*----------FIN CABECERA-------------*/
-/*----------CUERPO-------------*/
 .cuerpo-index {
 	margin-top: 30px;
 	font-size: 2em;
@@ -150,7 +160,7 @@ header.index li {
 	font-family: 'Marvel',sans-serif;
 	line-height: 2;
 }
-/*----------CUERPO-------------*/
+/*---------FIN INDEX---------*/
 /*----------FOOTER-------------*/
 footer {
 	padding: 2% 0;
@@ -170,7 +180,7 @@ footer a {
 /*----------FIN FOOTER-------------*/
 /* ------------CONTACTO----------*/
 .backgroundContacto {
-  height: 100vh;
+	height: 100vh;
   background-image: url(../images/contacto.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -185,7 +195,7 @@ footer a {
 	color: rgb(247, 204, 75);
 }
 .contact_form {
-  text-align: center;
+	text-align: center;
   padding-top:5%;
   margin: 0 10%;
   width: 80%;
@@ -201,7 +211,7 @@ footer a {
 	width: 100%;
 }
 .backgroundContactForm {
-  background-color: rgba(53, 74, 95, 0.58);
+	background-color: rgba(53, 74, 95, 0.58);
   height: 60vh;
   display: flex;
 	width: 40vw;
@@ -212,12 +222,12 @@ footer a {
 	box-shadow: 0px 0px 20px 5px rgba(0,10,20,0.90);
 }
 .contact input, textarea{
- margin-top: 5px;
- margin-bottom: 5px;
- border: 1px solid #DDDDDD;
- border-radius: 15px;
- font-size: 1em;
- width: 80%;
+	margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #DDDDDD;
+  border-radius: 15px;
+  font-size: 1em;
+  width: 80%;
 }
 textarea {
 	height: 6em;
@@ -371,37 +381,37 @@ textarea {
 	font-size: 1.3em;
 }
 /*--------HEADER----------*/
-.h1_nav {
+.title-nav {
 		margin-top: 5px;
 		margin-left: 15px;
 	}
 .menu-icon {
-		margin-top: 30px;
-		margin-right: 15px;
-	  cursor: pointer;
-	  display: inline-block;
-	  float: right;
-	  padding: 0;
-	  position: relative;
+	margin-top: 30px;
+	margin-right: 15px;
+	cursor: pointer;
+	display: inline-block;
+	float: right;
+	padding: 0;
+	position: relative;
 	}
 header nav{
-		display: none;
-	}
+	display: none;
+}
 .menu-icon .navicon {
-	  background: #fff;
-	  display: block;
-	  height: 3px;
-	  position: relative;
-	  width: 30px;
+	background: #fff;
+	display: block;
+	height: 3px;
+	position: relative;
+	width: 30px;
 }
 .menu-icon .navicon:before,.menu-icon .navicon:after {
-	  background: #fff;
-	  content: '';
-	  display: block;
-	  height: 100%;
-	  position: absolute;
-	  transition: all .2s ease-out;
-	  width: 100%;
+	background: #fff;
+	content: '';
+	display: block;
+	height: 100%;
+	position: absolute;
+	transition: all .2s ease-out;
+	width: 100%;
 	}
 .menu-icon .navicon:before {
 	  top: 5px;
@@ -473,4 +483,9 @@ header nav{
 }
 /*--------FIN ABOUT----------*/
 
+}
+.backgroundPerfil{
+	background: url("../images/bicicleta.jpg") no-repeat center;
+	background-size: cover;
+	height: 100vh;
 }
