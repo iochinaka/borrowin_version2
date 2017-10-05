@@ -28,7 +28,7 @@ if (isset($_POST['enviar'])) {
   <body>
     <div class="container">
 
-      <div class="background">
+      <div class="backgroundIndex">
       <?php include('header.php');?>
       </div>
       <div class="cabecera-index">
@@ -62,11 +62,8 @@ if (isset($_POST['enviar'])) {
           </form>
         </div>
       </div>
-    </div>
 
-    <div class="container">
     <div class="cuerpo-index">
-      <div>
         <h2>¿Qué es Borrowin?</h2>
         <br>
         <p>Es una red social de prestamos entre amigos!<br>
@@ -74,14 +71,13 @@ if (isset($_POST['enviar'])) {
         Es cuestión de pedirlo, buscarlo, usarlo y luego devolverlo.<br>
         Esa bicicleta que necesitas este fin de semana, o ese libro que queres leer,<br>
         estan al alcance de la mano. Y claro, vos también podes prestar</p>
-      </div>
     </div>
     </div>
 
     <footer class="">
-      <img class="margin-bottom" src="images/logo.svg" alt="" width="70px">
-      <p class="margin-bottom"><a href="#">Condiciones de uso</a></p>
-      <p class="footerlast">Borrowin 2017</p>
+      <img src="images/logo.svg" alt="" width="70px">
+      <p><a href="#">Condiciones de uso</a></p>
+      <p class="footer">Borrowin 2017</p>
     </footer>
   </body>
 </html>

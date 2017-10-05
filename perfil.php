@@ -20,9 +20,9 @@
 
 
     <footer class="">
-      <img class="margin-bottom" src="images/logo.svg" alt="" width="70px">
-      <p class="margin-bottom"><a href="#">Condiciones de uso</a></p>
-      <p class="footerlast">Borrowin 2017</p>
+      <img src="images/logo.svg" alt="" width="70px">
+      <p><a href="#">Condiciones de uso</a></p>
+      <p class="footer">Borrowin 2017</p>
     </footer>
   </body>
 </html>

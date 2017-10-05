@@ -9,15 +9,15 @@
   </head>
   <body>
     <div class="container">
-      <div class="">
+      <div class="backgroundContacto">
         <?php include('header.php') ?>
       </div>
 
-      <div class="contacto">
+      <div class="contactPage">
         <div class="contact_form">
           <div class="backgroundContactForm">
             <h2>Contactate con nosotros</h2>
-            <form class="contacto" action="index.html" method="post">
+            <form class="contact" action="index.html" method="post">
               <label for="name">Nombre</label><br>
               <input id="name" type="text" name="name" value="">
               <br>
@@ -34,9 +34,9 @@
     </div>
 
     <footer class="">
-        <img class="margin-bottom" src="images/logo.svg" alt="" width="70px">
-        <p class="margin-bottom"><a href="#">Condiciones de uso</a></p>
-        <p class="footerlast">Borrowin 2017</p>
+      <img src="images/logo.svg" alt="" width="70px">
+      <p><a href="#">Condiciones de uso</a></p>
+      <p class="footer">Borrowin 2017</p>
     </footer>
   </body>
 </html>
