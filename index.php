@@ -10,6 +10,7 @@ if (isset($_POST['enviar'])) {
     $linea=buscar_usuario_login($usuario,$clave);
     if (count($errores)==0){
       session_start();
+      $_SESSION['user'] = $usuario;
       header('Location: perfil.php');
     }
 }
@@ -62,8 +63,10 @@ if (isset($_POST['enviar'])) {
           </form>
         </div>
       </div>
-
+      
+    <div class="container">
     <div class="cuerpo-index">
+
         <h2>¿Qué es Borrowin?</h2>
         <br>
         <p>Es una red social de prestamos entre amigos!<br>

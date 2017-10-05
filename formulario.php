@@ -3,7 +3,10 @@ require_once('funciones.php');
     $usuario= isset ($_POST['usuario'])? $_POST['usuario'] : null;
     $clave= isset ($_POST['clave'])? $_POST['clave'] : null;
     $clave2= isset ($_POST['clave2'])? $_POST['clave2'] : null;
+    $profile_pic = $_FILES;
     $errores= array();
+    $pathPhoto = "";
+
 
     if (isset($_POST['registrar'])) {
         if ($clave !==$clave2) {
@@ -12,9 +15,17 @@ require_once('funciones.php');
         if (buscar_usuario_registro($usuario,"users.json")) {
           $errores['usuario_existe']="Usuario ya existente";
         }
+
+        $pathPhoto = savePhoto($profile_pic);
+
+        if (is_array($pathPhoto)) {
+          $errores['error_photo'] = $pathPhoto['error'];
+        }
+
         if (count($errores)==0){
-            registrar($_POST,"users.json");
+            registrar($_POST,"users.json", $pathPhoto);
             session_start();
+            $_SESSION['user'] = $usuario;
             header('Location: perfil.php');
         }
     }
@@ -55,6 +66,9 @@ require_once('funciones.php');
               <label for="clave2">Repetir Contraseña</label>
               <br>
               <input id="clave2" type="password" name="clave2" required value="">
+              <br>
+              <br>
+              <input type="file" name="profile_pic" id="profile_pic">
               <br>
               <?php if (isset($errores['claves_distintas'])){echo $errores['claves_distintas'];}?><br/>
             </div><br>

@@ -31,6 +31,15 @@ button {
   display: inline-block;
 	text-align: center;
 }
+.profile-img{
+	float: right;
+	border-radius: 50%;
+	vertical-align: middle;
+	margin-right: 2em;
+	padding: 5px;
+	height: 50px;
+	width: 50px;
+}
 .header .menu-btn {
   display: none;
 }
@@ -350,6 +359,10 @@ textarea {
 .cabecera-index {
 	flex-direction: column;
 	text-align: center;
+}
+.profile-img{
+	height: 50px;
+	width: 50px;
 }
 .cabecera-index h2 {
 	font-size: 2.5em;
