@@ -10,13 +10,25 @@
 
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+<<<<<<< HEAD
       <a class="logo" href=""><h1 class="title-nav">Borrowin!</h1></a>
       <img class="profile-img" src="images/profile/<?php echo $pic; ?>" alt="<?php echo $user; ?>">
+=======
+    <a class="logo" href=""><h1 class="h1_nav"><img class="logo" src="images/logo.svg" alt="" width="50px">orrowin</h1></a>
+    <img class="profile-img" src="images/profile/<?php echo $pic; ?>" alt="">
+      <!-- <a class="logo" href=""><h1 class="h1_nav">Borrowin!</h1></a> -->
+>>>>>>> 05a715685e9db9030dc6073bd5120712fe2d0319
     <nav class="menu">
       <ul>
         <li class="nav-bar"><a href="#">Perfil</a></li>
         <li class="nav-bar"><a href="#">Contacto</a></li>
+<<<<<<< HEAD
         <li id="closeSesion" class="nav-bar"><a href="cerrar_sesion.php">Cerrar Sesión</a></li>
+=======
+        <!-- <li class="nav-bar"><a href="cerrar_sesion.php">Cerrar Sesión</a></li> -->
+        <li id="closeSesion" class="nav-bar"><a href="cerrar_sesion.php">Cerrar Sesión</a></li>
+        
+>>>>>>> 05a715685e9db9030dc6073bd5120712fe2d0319
       </ul>
     </nav>
   </header>

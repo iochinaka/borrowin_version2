@@ -361,6 +361,10 @@ textarea {
 	flex-direction: column;
 	text-align: center;
 }
+.profile-img{
+	height: 50px;
+	width: 50px;
+}
 .cabecera-index h2 {
 	font-size: 2.5em;
 }

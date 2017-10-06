@@ -12,7 +12,7 @@ $errores= array();
             $_SESSION['user'] = $usuario;
             header('Location: perfil.php');
       } else {
-        
+
         if (count($errores)==0){
             if($_POST["recordarme"]=='1' || $_POST["recordarme"]=='on'){
                   $hour = time() + 3600 * 24 * 30;
@@ -26,6 +26,17 @@ $errores= array();
       }
 
   }
+if (isset($_POST['enviar'])) {
+    if (!buscar_usuario_login($usuario,$clave)){
+      $errores['usuario_error']="Usuario o clave incorrecta";
+    }
+    $linea=buscar_usuario_login($usuario,$clave);
+    if (count($errores)==0){
+      session_start();
+      $_SESSION['user'] = $usuario;
+      header('Location: perfil.php');
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -76,7 +87,11 @@ $errores= array();
         </div>
     </div>
 
+      </div>
+
+    <div class="container">
     <div class="cuerpo-index">
+
         <h2>¿Qué es Borrowin?</h2>
         <br>
         <p>Es una red social de prestamos entre amigos!<br>
