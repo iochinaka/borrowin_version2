@@ -26,7 +26,7 @@ $data = existe("users.json");
 }
 // Registro
 function registrar($datos,$db,$photo){
-if ($datos) {
+    if ($datos) {
         $datos['clave'] = password_hash($datos['clave'],PASSWORD_DEFAULT);
         $datos['clave2'] = password_hash($datos['clave2'],PASSWORD_DEFAULT);
         $datos['photo'] = $photo;

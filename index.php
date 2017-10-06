@@ -3,17 +3,29 @@ require_once 'funciones.php';
 $usuario= isset ($_POST['usuario'])? $_POST['usuario'] : null;
 $clave= isset ($_POST['clave'])? $_POST['clave'] : null;
 $errores= array();
-if (isset($_POST['enviar'])) {
-    if (!buscar_usuario_login($usuario,$clave)){
-      $errores['usuario_error']="Usuario o clave incorrecta";
-    }
-    $linea=buscar_usuario_login($usuario,$clave);
-    if (count($errores)==0){
-      session_start();
-      $_SESSION['user'] = $usuario;
-      header('Location: perfil.php');
-    }
-}
+  if (isset($_POST['enviar'])) {
+      if (!buscar_usuario_login($usuario,$clave)){
+        $errores['usuario_error']="Usuario o clave incorrecta";
+      }
+      if (isset($_COOKIE['username']) && isset($_COOKIE['password'])) {
+            session_start();
+            $_SESSION['user'] = $usuario;
+            header('Location: perfil.php');
+      } else {
+        
+        if (count($errores)==0){
+            if($_POST["recordarme"]=='1' || $_POST["recordarme"]=='on'){
+                  $hour = time() + 3600 * 24 * 30;
+                  setcookie('username', $_POST['usuario'], $hour);
+                  setcookie('password', password_hash($_POST['clave'],PASSWORD_DEFAULT), $hour);
+            }
+          session_start();
+          $_SESSION['user'] = $usuario;
+          header('Location: perfil.php');
+        }
+      }
+
+  }
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +64,7 @@ if (isset($_POST['enviar'])) {
               <br>
               <?php if (isset($errores['clave_error'])){echo $errores['clave_error'];}?><br/>
             </div>
-            <input id="recordarme" type="checkbox" name="recordarme" value="yes">
+            <input id="recordarme" type="checkbox" name="recordarme">
             <label for="recordarme">Recordarme</label>
             <br><br>
             <button type="submit" name="enviar" value="">Iniciar</button>
