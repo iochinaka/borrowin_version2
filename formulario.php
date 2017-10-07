@@ -1,4 +1,4 @@
-<?php
+  <?php
 require_once('funciones.php');
     $usuario= isset ($_POST['usuario'])? $_POST['usuario'] : null;
     $clave= isset ($_POST['clave'])? $_POST['clave'] : null;
@@ -6,10 +6,6 @@ require_once('funciones.php');
     $profile_pic = $_FILES;
     $errores= array();
     $pathPhoto = "";
-<<<<<<< HEAD
-=======
-
->>>>>>> 05a715685e9db9030dc6073bd5120712fe2d0319
 
     if (isset($_POST['registrar'])) {
         if ($clave !==$clave2) {
@@ -69,12 +65,7 @@ require_once('funciones.php');
               <label for="clave2">Repetir Contraseña</label>
               <br>
               <input id="clave2" type="password" name="clave2" required value="">
-              <br>
-<<<<<<< HEAD
               <br><br>
-=======
-              <br>
->>>>>>> 05a715685e9db9030dc6073bd5120712fe2d0319
               <input type="file" name="profile_pic" id="profile_pic">
               <br>
               <?php if (isset($errores['claves_distintas'])){echo $errores['claves_distintas'];}?><br/>

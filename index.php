@@ -3,21 +3,20 @@ require_once 'funciones.php';
 $usuario= isset ($_POST['usuario'])? $_POST['usuario'] : null;
 $clave= isset ($_POST['clave'])? $_POST['clave'] : null;
 $errores= array();
-  if (isset($_POST['enviar'])) {
-      if (!buscar_usuario_login($usuario,$clave)){
-        $errores['usuario_error']="Usuario o clave incorrecta";
-      }
-      if (isset($_COOKIE['username']) && isset($_COOKIE['password'])) {
+      if (isset($_COOKIE['username'])) {
             session_start();
-            $_SESSION['user'] = $usuario;
+            $_SESSION['user'] = $_COOKIE['username'];
             header('Location: perfil.php');
       } else {
 
+        if (isset($_POST['enviar'])) {
+          if (!buscar_usuario_login($usuario,$clave)){
+            $errores['usuario_error']="Usuario o clave incorrecta";
+          }
         if (count($errores)==0){
             if($_POST["recordarme"]=='1' || $_POST["recordarme"]=='on'){
-                  $hour = time() + 3600 * 24 * 30;
+                  $hour = time() + 3600;
                   setcookie('username', $_POST['usuario'], $hour);
-                  setcookie('password', password_hash($_POST['clave'],PASSWORD_DEFAULT), $hour);
             }
           session_start();
           $_SESSION['user'] = $usuario;
@@ -26,17 +25,6 @@ $errores= array();
       }
 
   }
-if (isset($_POST['enviar'])) {
-    if (!buscar_usuario_login($usuario,$clave)){
-      $errores['usuario_error']="Usuario o clave incorrecta";
-    }
-    $linea=buscar_usuario_login($usuario,$clave);
-    if (count($errores)==0){
-      session_start();
-      $_SESSION['user'] = $usuario;
-      header('Location: perfil.php');
-    }
-}
 ?>
 
 <!DOCTYPE html>
