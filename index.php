@@ -1,11 +1,14 @@
 <?php
 require_once 'funciones.php';
+$db = "users.json";
 $usuario= isset ($_POST['usuario'])? $_POST['usuario'] : null;
 $clave= isset ($_POST['clave'])? $_POST['clave'] : null;
 $errores= array();
       if (isset($_COOKIE['username'])) {
             session_start();
             $_SESSION['user'] = $_COOKIE['username'];
+            $sessionId = session_id();
+            update_user_session($usuario, $db, $sessionId);
             header('Location: perfil.php');
       } else {
 
@@ -20,6 +23,8 @@ $errores= array();
             }
           session_start();
           $_SESSION['user'] = $usuario;
+          $sessionId = session_id();
+          update_user_session($usuario, $db, $sessionId);
           header('Location: perfil.php');
         }
       }

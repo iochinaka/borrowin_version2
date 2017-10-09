@@ -1,10 +1,12 @@
 <?php
   // include_once "users.json";
-  include_once "funciones.php";
-  session_start();
-  $user = $_SESSION['user'];
-  $pic = buscar_pic($user);
+
+    include_once "funciones.php";
+    session_start();
+    $user = $_SESSION['user'];
+    $pic = buscar_pic($user);
 ?>
+<!DOCTYPE html>
 <div class="header">
   <header class="index">
 

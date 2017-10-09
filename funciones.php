@@ -22,27 +22,39 @@ function buscar_usuario_login($buscar_usuario,$clave){
             }
           return false;
 }
+
 // Registro
-function registrar($datos,$db,$photo){
-    if ($datos) {
-        $datos['clave'] = password_hash($datos['clave'],PASSWORD_DEFAULT);
-        $datos['clave2'] = password_hash($datos['clave2'],PASSWORD_DEFAULT);
-        $datos['photo'] = $photo;
-        $guardar=json_encode ($datos);
-        $data= existe ($db);
-        $guardar = $guardar."\n";
-        fwrite ($data,$guardar);
-  }
+function registrar($datos, $db, $photo, $sessionId){
+    $user = [
+      $datos["email"] => [
+        "nombre" => $datos["usuario"],
+        "clave" =>  password_hash($datos['clave'],PASSWORD_DEFAULT),
+        "clave2" =>  password_hash($datos['clave2'],PASSWORD_DEFAULT),
+        "photo" => $photo,
+        "sessionId" => $sessionId
+      ]
+    ];
+    $json = json_encode($user);
+    $json = $json . PHP_EOL;
+    file_put_contents("users.json", $json, FILE_APPEND);
+
+
 }
-function buscar_usuario_registro($buscar_usuario,$db){
-$data = existe($db);
-    while( $linea = fgets($data) ){
-      $usuario = json_decode($linea, true);
-        if ($usuario["usuario"]==$buscar_usuario) {
-          return $usuario;
-          }
-        }
-      return false;
+function buscar_usuario_registro($buscar_usuario, $db){
+// $data = existe($db);
+$arrayDb = file_get_contents($db);
+$data = json_decode($arrayDb, true);
+return array_key_exists($buscar_usuario, $data);
+
+//  {
+//    while( $linea = fgets($data) ){
+//      $usuario = json_decode($linea, true);
+//      if (array_key_exists($usuario["$buscar_usuario"])) {
+//        return $usuario;
+//      }
+//    }
+//    return false;
+// }
 }
 /**
  * [savePhoto description]
@@ -92,5 +104,45 @@ $data = existe($db);
             }
           }
         return false;
+  }
+
+  function buscar_session($user){
+  $data = existe("users.json");
+      while( $linea = fgets($data) ){
+        $usuario = json_decode($linea, true);
+          if ($usuario["usuario"] == $user) {
+            return $usuario['sessionId'];
+            }
+          }
+        return false;
+  }
+  function update_user_session($user, $db, $sessionId){
+    $jsonDb = file_get_contents($db);
+    $data = json_decode($jsonDb, true);
+    // $data[$user]['sessionId'] = $sessionId;
+    //
+    $i = 0;
+    $found = false;
+    while ($i < count($data) && ($found == false)) {
+      if ($data['usuario'] == $user ) {
+        $data['sessionId'] = $sessionId;
+        $newJsonString = json_encode($data);
+        file_put_contents($db, $newJsonString);
+        $found = true;
+      }
+      $i++;
+    }
+
+      while( $data['usuario'] != $user){
+        $usuario = json_decode($linea, true);
+
+              if ($usuario["usuario"] == $user) {
+                  $datos['sessionId'] = $sessionId;
+                  $guardar=json_encode ($datos);
+                  $data= existe ($db);
+                  $guardar = $guardar."\n";
+                  fwrite ($data,$guardar);
+              }
+      }
   }
 ?>
