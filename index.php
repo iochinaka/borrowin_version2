@@ -6,14 +6,14 @@ $clave= isset ($_POST['clave'])? $_POST['clave'] : null;
 $errores= array();
       if (isset($_COOKIE['username'])) {
             session_start();
-            $_SESSION['user'] = $_COOKIE['username'];
+            $_SESSION['email'] = $_COOKIE['username'];
             $sessionId = session_id();
             update_user_session($usuario, $db, $sessionId);
             header('Location: perfil.php');
       } else {
 
         if (isset($_POST['enviar'])) {
-          if (!buscar_usuario_login($usuario,$clave)){
+          if (!buscar_usuario_login($usuario, $clave, $db)){
             $errores['usuario_error']="Usuario o clave incorrecta";
           }
         if (count($errores)==0){
@@ -22,7 +22,7 @@ $errores= array();
                   setcookie('username', $_POST['usuario'], $hour);
             }
           session_start();
-          $_SESSION['user'] = $usuario;
+          $_SESSION['email'] = $usuario;
           $sessionId = session_id();
           update_user_session($usuario, $db, $sessionId);
           header('Location: perfil.php');

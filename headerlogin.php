@@ -1,10 +1,19 @@
 <?php
   // include_once "users.json";
-
+    $db = "users.json";
     include_once "funciones.php";
     session_start();
-    $user = $_SESSION['user'];
-    $pic = buscar_pic($user);
+    if (!buscar_session(session_id(), $_SESSION['email'], $db)) {
+      if (isset($_COOKIE["username"])){
+            $hour = time() - 3600;
+            setcookie('username'," ", $hour);
+            header('Location: index.php');
+      } else {
+            header('Location: index.php');
+      }
+    }
+    $user = $_SESSION['email'];
+    $pic = buscar_pic($user, $db);
 ?>
 <!DOCTYPE html>
 <div class="header">
