@@ -25,6 +25,7 @@ button {
 }
 .stroke {
 -webkit-text-stroke: 1.5px white;
+	-webkit-text-stroke: 1.5px white;
 }
 /*---------- HEADER-------------*/
 .nav-bar {
