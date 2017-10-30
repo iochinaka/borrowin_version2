@@ -80,9 +80,6 @@ $errores= array();
         </div>
     </div>
 
-      </div>
-
-    <div class="container">
     <div class="cuerpo-index">
 
         <h2>¿Qué es Borrowin?</h2>
