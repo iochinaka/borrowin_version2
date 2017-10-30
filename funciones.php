@@ -1,17 +1,4 @@
 <?php
-// session_start();
-// funciones globales
-$errors;
-  function existe ($archivo){
-  if (file_exists($archivo)){
-    $data=fopen ($archivo,'a+');
-    }
-    else {
-    $data=fopen ($archivo,'w+');
-    }
-    return $data;
-  }
-
 function buscar_usuario_login($buscar_usuario, $clave, $db){
       // $data = existe("users.json");
       $userDb = json_decode(file_get_contents($db), true);
