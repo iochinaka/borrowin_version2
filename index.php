@@ -1,8 +1,6 @@
 <?php
 require_once 'funciones.php';
 $db = "users.json";
-$usuario= isset($_POST['usuario'])? $_POST['usuario'] : null;
-$clave= isset($_POST['clave'])? $_POST['clave'] : null;
 $errores= array();
       if (isset($_COOKIE['username'])) {
           session_start();
