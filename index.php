@@ -1,35 +1,33 @@
 <?php
 require_once 'funciones.php';
 $db = "users.json";
-$usuario= isset ($_POST['usuario'])? $_POST['usuario'] : null;
-$clave= isset ($_POST['clave'])? $_POST['clave'] : null;
+$usuario= isset($_POST['usuario'])? $_POST['usuario'] : null;
+$clave= isset($_POST['clave'])? $_POST['clave'] : null;
 $errores= array();
       if (isset($_COOKIE['username'])) {
-            session_start();
-            $_SESSION['email'] = $_COOKIE['username'];
-            $sessionId = session_id();
-            update_user_session($usuario, $db, $sessionId);
-            header('Location: perfil.php');
-      } else {
-
-        if (isset($_POST['enviar'])) {
-          if (!buscar_usuario_login($usuario, $clave, $db)){
-            $errores['usuario_error']="Usuario o clave incorrecta";
-          }
-        if (count($errores)==0){
-            if($_POST["recordarme"]=='1' || $_POST["recordarme"]=='on'){
-                  $hour = time() + 3600;
-                  setcookie('username', $_POST['usuario'], $hour);
-            }
           session_start();
-          $_SESSION['email'] = $usuario;
+          $_SESSION['email'] = $_COOKIE['username'];
           $sessionId = session_id();
           update_user_session($usuario, $db, $sessionId);
           header('Location: perfil.php');
-        }
+      } else {
+          if (isset($_POST['enviar'])) {
+              if (!buscar_usuario_login($usuario, $clave, $db)) {
+                  $errores['usuario_error']="Usuario o clave incorrecta";
+              }
+              if (count($errores)==0) {
+                  if ($_POST["recordarme"]=='1' || $_POST["recordarme"]=='on') {
+                      $hour = time() + 3600;
+                      setcookie('username', $_POST['usuario'], $hour);
+                  }
+                  session_start();
+                  $_SESSION['email'] = $usuario;
+                  $sessionId = session_id();
+                  update_user_session($usuario, $db, $sessionId);
+                  header('Location: perfil.php');
+              }
+          }
       }
-
-  }
 ?>
 
 <!DOCTYPE html>
@@ -61,12 +59,16 @@ $errores= array();
               <br>
               <input id="usuario" type="text" name="usuario" required value='<?php echo $usuario ?>'>
               <br>
-              <?php if (isset($errores['usuario_error'])){echo $errores['usuario_error'];}?><br/>
+              <?php if (isset($errores['usuario_error'])) {
+    echo $errores['usuario_error'];
+}?><br/>
               <label for="clave">Contraseña</label>
               <br>
               <input id="clave" type="password" name="clave" required value="">
               <br>
-              <?php if (isset($errores['clave_error'])){echo $errores['clave_error'];}?><br/>
+              <?php if (isset($errores['clave_error'])) {
+    echo $errores['clave_error'];
+}?><br/>
             </div>
             <input id="recordarme" type="checkbox" name="recordarme">
             <label for="recordarme">Recordarme</label>
