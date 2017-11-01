@@ -1,1 +1,23 @@
-{"k2@so.com":{"nombre":"k2so","clave":"$2y$10$I9oCYlf1ua\/6lCQsTNaPpeYG68jputRLUD\/h2yKTW8mVJNyGdovdi","clave2":"$2y$10$bUPim1feih\/3vXyRXPxyHenOLzQwge70S\/\/dIyKIN.f6wWsQcC4LO","photo":"20171013230324_profile.jpg","sessionId":"c3bt1a12304e10mu7aap6skhln"}}
+{
+  "k2@so.com": {
+    "nombre": "k2so",
+    "clave": "$2y$10$I9oCYlf1ua\/6lCQsTNaPpeYG68jputRLUD\/h2yKTW8mVJNyGdovdi",
+    "clave2": "$2y$10$bUPim1feih\/3vXyRXPxyHenOLzQwge70S\/\/dIyKIN.f6wWsQcC4LO",
+    "photo": "20171013230324_profile.jpg",
+    "sessionId": "c3bt1a12304e10mu7aap6skhln"
+  },
+  "tes@tes.com": {
+    "nombre": "max",
+    "clave": "$2y$10$dpKCAXt9PMOUpQIkXY79hOGH4ccqqDJkV4pRJ8vb4Vk0YKsHbKNWe",
+    "clave2": "$2y$10$NCRJ421IjoxQOmu4yBm16eYAiLHaP3Q.su31Go6NMLR.L34\/WxKlW",
+    "photo": "20171031203946_profile.jpg",
+    "sessionId": "m2mtbi49l4kdkhhff14km568cr"
+  },
+  "asd@asd.ccom": {
+    "nombre": "asd",
+    "clave": "$2y$10$YEp.t\/HffQIrUXUQLi544.Q.Hdwc2k8xmG4hdihbSZqpFYBf\/H0xi",
+    "clave2": "$2y$10$NzBxhwa0l7Cqs3VI\/qgeLut.uTqjQDgVMQBvn2Z\/s1gR.PZeeeANK",
+    "photo": "20171031204202_profile.jpg",
+    "sessionId": "5g5p3iljebmlssi9coa8h1acdq"
+  }
+}

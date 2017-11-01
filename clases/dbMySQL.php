@@ -65,13 +65,13 @@ class dbMySQL extends db
         $query->execute();
 
 
-        $sq2 = "INSERT INTO usuarioperfil (nombre, userPic, user_perfilId)
-        VALUES (:nombre, :$idPhotoProfile, :user_perfilId)";
+        $sql2 = "INSERT INTO usuarioperfil (nombre, userPic, user_perfilId)
+        VALUES (:nombre, :profilePicture, :user_perfilId)";
 
         $query2 = $this->conn->prepare($sql2);
 
         $query2->bindValue(":nombre", $usuario->getNombre());
-        $query2->bindValue(":$idPhotoProfile", $usuario->getIdPhotoProfile());
+        $query2->bindValue(":profilePicture", $usuario->getProfilePicture());
         $query2->bindValue(":user_perfilId", $this->conn->lastInsertId());
 
         $query2->execute();
@@ -130,5 +130,8 @@ class dbMySQL extends db
         $query->bindValue(":id", $usuario->getId());
 
         $query->execute();
+    }
+    public function buscar_session()
+    {
     }
 }

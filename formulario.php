@@ -1,39 +1,27 @@
 <?php
-require_once ('funciones.php');
-$usuario = isset ($_POST['usuario']) ? $_POST['usuario'] : null;
-$email = isset ($_POST['email']) ? $_POST['email'] : null;
-$clave = isset ($_POST['clave']) ? $_POST['clave'] : null;
-$clave2 = isset ($_POST['clave2']) ? $_POST['clave2'] : null;
-$db = "users.json";
-$profile_pic = $_FILES;
-$errores = array();
-$pathPhoto = "";
+require_once("./clases/dbMySQL.php");
+require_once("./clases/validData.php");
+require_once('funciones.php');
+
 
 if (isset($_POST['registrar'])) {
-    if ($clave !== $clave2) {
-    $errores['claves_distintas'] = "Las contraseñas son distintas";
-    }
-    if (buscar_usuario_registro($email, $db)) {
-      $errores['usuario_existe'] = "Usuario ya existente";
-    }
+    $db = new dbMySQL();
+    $validar = new Validator();
+    $errores = $validar->validarInformacion($db, $_POST, $_FILES);
 
-    $pathPhoto = savePhoto($profile_pic);
-
-    if (is_array($pathPhoto)) {
-      $errores['error_photo'] = $pathPhoto['error'];
-    }
-
-    if (count($errores) == 0){
+    if (count($errores) == 0) {
         session_start();
-        $sessionId = session_id();
-        $_SESSION['email'] = $email;
-        registrar($_POST, $db, $pathPhoto, $sessionId);
+        $_SESSION['email'] = $_POST['email'];
+        $user = new Usuario($_POST['nombre'], $_POST['email'], $_POST['clave'], $_FILES, session_id());
+        $us = $db->guardarUsuario($user);
         header('Location: perfil.php');
     }
 }
 ?>
 
+
 <!DOCTYPE html>
+
 <html>
   <head>
     <meta charset="utf-8">
@@ -54,9 +42,9 @@ if (isset($_POST['registrar'])) {
           <p>Registrate</p>
           <form class="" action="formulario.php" method="post" enctype="multipart/form-data">
             <div>
-              <label for="usuario">Nombre de Usuario</label>
+              <label for="nombre">Nombre de Usuario</label>
               <br>
-              <input id="usuario" type="text" name="usuario" required value='<?php echo $usuario ?>'>
+              <input id="usuario" type="text" name="nombre" required value="">
               <br><br>
               <label for="email"> E-mail </label><br/>
               <input type="email" id="email" name="email" required value="">
@@ -69,14 +57,19 @@ if (isset($_POST['registrar'])) {
               <br>
               <input id="clave2" type="password" name="clave2" required value="">
               <br><br>
-              <input type="file" name="profile_pic" id="profile_pic">
-              <br>
-              <?php if (isset($errores['claves_distintas'])){echo $errores['claves_distintas'];}?><br/>
+              <input type="file" name="profile_pic" id="profile_pic" required >
+              <br><br/>
             </div>
             <button type="submit" name="registrar" value="">Registrar</button>
             <br>
-            <?php if (isset($errores['usuario_existe'])){echo $errores['usuario_existe'];}?>
             <a href="index.php">¿Ya estás registrado?</a>
+            <br>
+              <?php if (isset($errores)) :?>
+              <?php foreach ($errores as $key => $value): ?>
+                <?php echo "| $value |" ?>
+              <?php endforeach; ?>
+
+            <?php endif; ?>
           </form>
         </div>
         <div class="texto-registro">
