@@ -1,11 +1,5 @@
 <?php
 require_once("./clases/dbMySQL.php");
-require_once("./clases/validData.php");
-require_once("./clases/session.php");
-require_once('funciones.php');
-// $usuario= isset ($_POST['usuario']) ? $_POST['usuario'] : null;
-// $clave= isset ($_POST['clave']) ? $_POST['clave'] : null;
-// $errores= array();
 //
 
       if (isset($_COOKIE['username'])) {
@@ -69,21 +63,9 @@ require_once('funciones.php');
           <h2>Prestalo con GANAS</h2>
           <h3>Lo queres, lo pedis, lo tenes!</h3>
         </div>
-        <div class="formLogin">
+        <div class="formMigrar">
           <p>Inicia Sesion</p>
           <form action="index.php" method="post">
-            <div>
-              <label for="usuario">Nombre de Usuario</label>
-              <br>
-              <input id="usuario" type="text" name="usuario" required value="">
-              <br>
-              <?php if (isset($errores['usuario'])){echo $errores['usuario'];}?><br/>
-              <label for="clave">Contraseña</label>
-              <br>
-              <input id="clave" type="password" name="clave" required value="">
-              <br>
-              <?php if (isset($errores['clave'])){echo $errores['clave'];}?><br/>
-            </div>
             <input id="recordarme" type="checkbox" name="recordarme">
             <label for="recordarme">Recordarme</label>
             <br><br>

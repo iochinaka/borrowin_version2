@@ -14,7 +14,7 @@ class Usuario
     private $sessionId;
     private $profilePic;
 
-    public function __construct($nombre, $email, $password, $profilePic = null, $sessionId = null, $edad = null, $pais = null, $id = null)
+    public function __construct($nombre, $email, $password, $userPic, $sessionId = null, $edad = null, $pais = null, $id = null)
     {
         if ($id == null) {
             $this->password = password_hash($password, PASSWORD_DEFAULT);
@@ -27,7 +27,12 @@ class Usuario
         $this->pais = $pais;
         $this->sessionId = $sessionId;
         $this->id = $id;
-        $this->setProfilePicture($profilePic);
+        if (is_array($userPic)) {
+          $this->processProfilePic($userPic);
+        } else {
+          $this->setProfilePic($userPic);
+        }
+
     }
     public function getId()
     {
@@ -87,7 +92,7 @@ class Usuario
     }
     public function getProfilePic()
     {
-        return $this->sessionId;
+        return $this->profilePic;
     }
     public function setProfilePic($profilePic)
     {
@@ -111,7 +116,7 @@ class Usuario
     {
         $this->password = password_hash($password, PASSWORD_DEFAULT);
     }
-    public function setProfilePicture($photo)
+    public function processProfilePic($photo)
     {
         $name = $photo["profile_pic"]["name"];
         $picture = $photo["profile_pic"]["tmp_name"];

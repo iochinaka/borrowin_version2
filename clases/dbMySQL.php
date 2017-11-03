@@ -2,6 +2,7 @@
 
 require_once("db.php");
 require_once("usuario.php");
+require_once("schema.php");
 
 class dbMySQL extends db
 {
@@ -34,7 +35,7 @@ class dbMySQL extends db
         if (!$array) {
             return null;
         }
-        return new Usuario($array["nombre"], $array["email"], $array["password"], $array["edad"], $array["pais"], $array["idPhotoProfile"], $array["sessionid"], $array["userid"]);
+        return new Usuario($array["nombre"], $array["email"], $array["password"], $array["userPic"], $array["sessionid"], $array["edad"], $array["pais"], $array["userid"]);
     }
     public function traerTodosLosUsuarios()
     {
@@ -65,14 +66,16 @@ class dbMySQL extends db
         $query->execute();
 
 
-        $sql2 = "INSERT INTO usuarioperfil (nombre, userPic, user_perfilId)
-        VALUES (:nombre, :profilePicture, :user_perfilId)";
+        $sql2 = "INSERT INTO usuarioperfil (nombre, userPic, user_perfilId, sessionId)
+        VALUES (:nombre, :profilePicture, :user_perfilId, :sessionId)";
 
         $query2 = $this->conn->prepare($sql2);
 
         $query2->bindValue(":nombre", $usuario->getNombre());
         $query2->bindValue(":profilePicture", $usuario->getProfilePicture());
         $query2->bindValue(":user_perfilId", $this->conn->lastInsertId());
+        $query2->bindValue(":sessionId", $usuario->getSessionId());
+
 
         $query2->execute();
 
@@ -131,7 +134,30 @@ class dbMySQL extends db
 
         $query->execute();
     }
-    public function buscar_session()
-    {
+    // public function buscar_session($session, $usuario, $db)
+    // {
+    //   $sql = "SELECT sessionid FROM usuarioperfil WHERE perfilId = (SELECT userid FROM usuarios WHERE email = :email);";
+    //   $query = $this->conn->prepare($sql);
+    //   $query->bindValue(":email", $usuario->getEmail());
+    //   $query->execute();
+    //   $array = $query->fetch(PDO::FETCH_ASSOC);
+    //
+    //
+    //
+    //   $userDb = json_decode(file_get_contents($db), true);
+    //   $seId = $userDb[$user]["sessionId"];
+    //   return ($session == $seId) ? TRUE : FALSE;
+    //
+    // }
+    function buscar_pic($user, $db){
+    $userDb = json_decode(file_get_contents($db), true);
+    return $userDb[$user]["photo"];
     }
+
+    // function update_user_session($user, $db, $sessionId){
+    //   $userDb = json_decode(file_get_contents($db), true);
+    //   $userDb[$user]['sessionId'] = $sessionId;
+    //   file_put_contents($db, json_encode($userDb));
+    //
+    // }
 }
