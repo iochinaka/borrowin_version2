@@ -13,7 +13,7 @@ if (isset($_POST['registrar'])) {
         session_start();
         $_SESSION['email'] = $_POST['email'];
         $user = new Usuario($_POST['nombre'], $_POST['email'], $_POST['clave'], $_FILES, session_id());
-        $us = $db->guardarUsuario($user);
+        $usr = $db->guardarUsuario($user);
         header('Location: perfil.php');
     }
 }

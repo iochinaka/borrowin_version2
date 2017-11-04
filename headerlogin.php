@@ -1,19 +1,25 @@
 <?php
   // include_once "users.json";
-    $db = "users.json";
-    include_once "funciones.php";
+    require_once("./clases/dbMySQL.php");
+    require_once("./clases/validData.php");
+    require_once("./clases/session.php");
+
     session_start();
-    if (!buscar_session(session_id(), $_SESSION['email'], $db)) {
-      if (isset($_COOKIE["username"])){
-            $hour = time() - 3600;
-            setcookie('username'," ", $hour);
-            header('Location: index.php');
-      } else {
-            header('Location: index.php');
-      }
+    $validar = new Validator();
+
+    if (!$validar->estaLogueado() && !isset($_COOKIE["username"])) {
+        header('Location: index.php');
+        exit;
     }
-    $user = $_SESSION['email'];
-    $pic = buscar_pic($user, $db);
+
+    $db = new dbMySQL();
+    $usr = ($validar->estaLogueado()) ? $db->traerPorEmail($_SESSION['email']) : $db->traerPorEmail($_COOKIE["username"]);
+
+    if (is_null($usr)) {
+        Session::borrarSesion();
+        header('Location: index.php');
+    }
+    $pic = $usr->getProfilePic();
 ?>
 <!DOCTYPE html>
 <div class="header">
@@ -22,7 +28,7 @@
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
       <a class="logo" href=""><h1 class="title-nav">Borrowin!</h1></a>
-      <img class="profile-img" src="images/profile/<?php echo $pic; ?>" alt="<?php echo $user; ?>">
+      <img class="profile-img" src="images/profile/<?php echo $pic; ?>" alt="<?php echo $usr->getNombre(); ?>">
       <!-- <a class="logo" href=""><h1 class="h1_nav">Borrowin!</h1></a> -->
     <nav class="menu">
       <ul>

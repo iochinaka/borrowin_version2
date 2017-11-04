@@ -67,21 +67,21 @@ function registrar($datos, $db, $photo, $sessionId)
  * @return [type]        [description]
  */
 
-  function buscar_pic($user, $db)
-  {
-      $userDb = json_decode(file_get_contents($db), true);
-      return $userDb[$user]["photo"];
-  }
-
-  function buscar_session($session, $user, $db)
-  {
-      $userDb = json_decode(file_get_contents($db), true);
-      $seId = $userDb[$user]["sessionId"];
-      return ($session == $seId) ? true : false;
-  }
-  function update_user_session($user, $db, $sessionId)
-  {
-      $userDb = json_decode(file_get_contents($db), true);
-      $userDb[$user]['sessionId'] = $sessionId;
-      file_put_contents($db, json_encode($userDb));
-  }
+  // function buscar_pic($user, $db){
+  // $userDb = json_decode(file_get_contents($db), true);
+  // return $userDb[$user]["photo"];
+  // }
+  //
+  // function buscar_session($session, $user, $db){
+  // $userDb = json_decode(file_get_contents($db), true);
+  // $seId = $userDb[$user]["sessionId"];
+  // return ($session == $seId) ? TRUE : FALSE;
+  //
+  // }
+  // function update_user_session($user, $db, $sessionId){
+  //   $userDb = json_decode(file_get_contents($db), true);
+  //   $userDb[$user]['sessionId'] = $sessionId;
+  //   file_put_contents($db, json_encode($userDb));
+  //
+  // }
+?>

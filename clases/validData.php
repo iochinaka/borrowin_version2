@@ -51,24 +51,24 @@ class Validator
         return $this->arrayDeErrores;
     }
 
-    public function validarLogin(db $db)
+    public function validarLogin(db $db, $post)
     {
         $this->arrayDeErrores = [];
 
 
-        if ($post["email"] == "") {
-            $this->arrayDeErrores["email"] = "Che, el mail no esta";
-        } elseif (filter_var($post["email"], FILTER_VALIDATE_EMAIL) == false) {
-            $this->arrayDeErrores["email"] = "Che, el FORMATO del mail esta mal";
-        } elseif ($db->traerPorEmail($post["email"]) == null) {
-            $this->arrayDeErrores["email"] = "El mail no esta en la base";
+        if ($post["usuario"] == "") {
+            $this->arrayDeErrores["usuario"] = "Che, el mail no esta";
+        } elseif (filter_var($post["usuario"], FILTER_VALIDATE_EMAIL) == false) {
+            $this->arrayDeErrores["usuario"] = "Che, el FORMATO del mail esta mal";
+        } elseif ($db->traerPorEmail($post["usuario"]) == null) {
+            $this->arrayDeErrores["usuario"] = "El mail no esta en la base";
         } else {
             //El mail existe!!
-            $usuario = $db->traerPorEmail($post["email"]);
-            var_dump(password_verify($post["password"], $usuario->getPassword()), $usuario->getPassword());
+            $usuario = $db->traerPorEmail($post["usuario"]);
+            // var_dump(password_verify($post["clave"], $usuario->getPassword()), $usuario->getPassword());
 
-            if (password_verify($post["password"], $usuario->getPassword()) == false) {
-                $this->arrayDeErrores["password"] = "La contraseña no verifica";
+            if (password_verify($post["clave"], $usuario->getPassword()) == false) {
+                $this->arrayDeErrores["clave"] = "La contraseña no verifica";
             }
         }
 
@@ -107,4 +107,13 @@ class Validator
 
         return $this->arrayDeErrores;
     }
+    // me guardo el id del usuario en session para mantenerlo logueado
+  function loguear($usuario) {
+    $_SESSION["idUser"] = $usuario["id"];
+  }
+// la funcion esta logueado pregunta si hay algun id guardado en session
+  function estaLogueado() {
+    return isset($_SESSION["email"]);
+  }
+
 }
