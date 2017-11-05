@@ -1,11 +1,23 @@
-{"usuario":"amatesa","email":"a@gmail.com","clave":"$2y$10$8MyrMDcuVbWzB4e3W701b.pTmW\/sIJOYIy2FpWvw7sAycxiB01Vuu","clave2":"1234","registrar":"","photo":"20171005212507_profile.jpg"}
-{"usuario":"a","email":"a@gmail.com","clave":"$2y$10$FTCtPGEt\/oKPzYdKlQUXTuwA6hWcIkvzA2CQAAUHVUUPdy5JLXGGK","clave2":"1234","registrar":"","photo":null}
-{"usuario":"b","email":"a@gmail.com","clave":"$2y$10$zJ1A1FLW1Qkqhf3i2KsiQekUHhozC4zh0zH2SdtSQfxge2H9B77ci","clave2":"1234","registrar":"","photo":"20171005212910_profile.jpg"}
-{"usuario":"a1","email":"a@gmail.com","clave":"$2y$10$4v3oscAV847FmIOpDeh5XeC5JzVskZawknhopCG9E2QPO7JV6FprK","clave2":"1234","registrar":"","photo":"20171005212933_profile.jpg"}
-{"usuario":"amatesa123","email":"a@gmail.com","clave":"$2y$10$LTz7eHmTeACCHzLmas6oNOMIYD4kENgNxq\/JzL6z8nzoqDfFq1\/qi","clave2":"1234","registrar":"","photo":"20171005221743_profile.jpg"}
-{"usuario":"ale","email":"ale@gmail.com","clave":"$2y$10$P5x8O3Nswl3OgBxQahczC.6w6HH7CKLXZjkAXED1sfjRbcw0Xhnra","clave2":"1","registrar":"","photo":"20171005223115_profile.jpg"}
-{"usuario":"test","email":"test@test.com","clave":"$2y$10$RODikmxs7nflYrVQ0zGL\/.oD1Jxc0CntLMCbjdT2Gawn6REnzGmMa","clave2":"$2y$10$agjIylwQ8QP5Hqt\/buQ0.ebmaHFH2La4FhWFLFUibI2g0wRu3U\/S.","registrar":"","photo":"20171005192122_profile.jpg"}
-{"usuario":"sergio","email":"sergio.nakasone@gmail.com","clave":"$2y$10$43VpamaEEv\/yzTK7U8lV0eSrfP4OeHdiYIXf2y9hcEdBiLj4NKrJO","clave2":"1234","registrar":"","photo":"20171005215449_profile.jpg"}
-{"usuario":"naka","email":"sergio.nakasone@gmail.com","clave":"$2y$10$4q.T2glVyxftVA7Z3bUSWOOgzPz.whHv1U.hh63R4TVOrg466GqqW","clave2":"1234","registrar":"","photo":"20171005215642_profile.jpg"}
-{"usuario":"adri","email":"adri@gmail.com","clave":"$2y$10$KzD04SFj0FZOS7BzAnOK4.SAyK3PPeNBDSWitjri45WYMxc0qUUeC","clave2":"$2y$10$cb3id3qQlV9OF\/er8c2aKe3PebgpCUzj\/tRJ9BF3Up14EW3l7wLyO","registrar":"","photo":"20171011000356_profile.jpg"}
-{"usuario":"fdsf","email":"fdsf@dsfds.com","clave":"$2y$10$TRWHg2TeKI\/dLEElP3olreFbg5S0RrIcz9phTJgB5abXHBm7fvgSG","clave2":"$2y$10$.zxZktk1W1mh9HNXfO3U0OcgAu5tWJc3dtLmmEwustO3wm6Ib07IG","registrar":"","photo":"20171013004929_profile.jpg"}
+{
+  "k2@so.com": {
+    "nombre": "k2so",
+    "clave": "$2y$10$I9oCYlf1ua\/6lCQsTNaPpeYG68jputRLUD\/h2yKTW8mVJNyGdovdi",
+    "clave2": "$2y$10$bUPim1feih\/3vXyRXPxyHenOLzQwge70S\/\/dIyKIN.f6wWsQcC4LO",
+    "photo": "20171013230324_profile.jpg",
+    "sessionId": "c3bt1a12304e10mu7aap6skhln"
+  },
+  "tes@tes.com": {
+    "nombre": "max",
+    "clave": "$2y$10$dpKCAXt9PMOUpQIkXY79hOGH4ccqqDJkV4pRJ8vb4Vk0YKsHbKNWe",
+    "clave2": "$2y$10$NCRJ421IjoxQOmu4yBm16eYAiLHaP3Q.su31Go6NMLR.L34\/WxKlW",
+    "photo": "20171031203946_profile.jpg",
+    "sessionId": "m2mtbi49l4kdkhhff14km568cr"
+  },
+  "asd@asd.ccom": {
+    "nombre": "asd",
+    "clave": "$2y$10$YEp.t\/HffQIrUXUQLi544.Q.Hdwc2k8xmG4hdihbSZqpFYBf\/H0xi",
+    "clave2": "$2y$10$NzBxhwa0l7Cqs3VI\/qgeLut.uTqjQDgVMQBvn2Z\/s1gR.PZeeeANK",
+    "photo": "20171031204202_profile.jpg",
+    "sessionId": "5g5p3iljebmlssi9coa8h1acdq"
+  }
+}

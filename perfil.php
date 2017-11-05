@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,15 +12,11 @@
   <body>
     <div class="container">
 
-      <div class="backgroundPerfil">
+      <div class="backgroudIndex">
       <?php include('headerlogin.php');?>
-      </div>
-        <div class="cabecera-index">
-          <h2>Login Exitoso</h2>
-          <ul>
-            <li class="nav-bar"><a href="muro_sn.php">muro</a></li>
-          </ul>
-        </div>
+    </div class="cabecera-index">
+        <p>Login Exitoso</p>
+
     </div>
 
 

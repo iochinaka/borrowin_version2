@@ -126,6 +126,16 @@ header.index li {
 	border-radius: 15px;
 	box-shadow: 0px 0px 20px 5px rgba(0,10,20,0.90);
 }
+.formMigrar {
+	text-align: center;
+	color: #000;
+	background-color: rgba(53, 74, 95, 0.58);
+	padding: 10px;
+	width: 30%;
+	max-width: 1000px;
+	border-radius: 15px;
+	box-shadow: 0px 0px 20px 5px rgba(0,10,20,0.90);
+}
 .formLogin p {
 	font-size: 1.5em;
 	font-family: 'Kaushan Script';
@@ -390,6 +400,10 @@ textarea {
 .cabecera-index {
 	flex-direction: column;
 	text-align: center;
+}
+.profile-img{
+	height: 50px;
+	width: 50px;
 }
 .cabecera-index h2 {
 	font-size: 2.5em;
