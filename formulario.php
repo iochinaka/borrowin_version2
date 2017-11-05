@@ -1,6 +1,7 @@
 <?php
 require_once('funciones.php');
     $usuario= isset ($_POST['usuario'])? $_POST['usuario'] : null;
+    $email= isset ($_POST['email'])? $_POST['email'] : null;
     $clave= isset ($_POST['clave'])? $_POST['clave'] : null;
     $clave2= isset ($_POST['clave2'])? $_POST['clave2'] : null;
     $profile_pic = $_FILES;
@@ -56,7 +57,7 @@ require_once('funciones.php');
               <input id="usuario" type="text" name="usuario" required value='<?php echo $usuario ?>'>
               <br><br>
               <label for="email"> E-mail </label><br/>
-              <input type="email" id="email" name="email" required value="">
+              <input type="email" id="email" name="email" required value="<?php echo $email ?>">
               <br><br>
               <label for="clave" >Contraseña</label>
               <br>

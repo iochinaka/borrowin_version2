@@ -22,6 +22,7 @@ button {
 .container {
 	position: relative;
 	overflow: hidden;
+	border: solid 10px red;
 }
 .stroke {
 -webkit-text-stroke: 1.5px white;
@@ -358,6 +359,33 @@ textarea {
 	text-shadow: -1px -1px 1px #000;
 }
 /* --------FIN REGISTRO----------*/
+
+/* --------PERFIL LOGUEADO CON MURO----------*/
+
+.muro{
+	border: solid 1px green;
+}
+/*.backgroundPerfil-muro{
+	float: leaft;
+	overflow: hidden;
+	padding: 50px;
+}*/
+.producto{
+	/*display: inline-block;*/
+	float: left;
+	border: solid 1px red;
+}
+.amigos{
+	/*display: inline-block;*/
+	float: left;
+	border: solid 1px blue;
+}
+
+
+
+/* --------FIN PERFIL LOGUEADO CON MURO----------*/
+
+
 @media (max-width: 850px) {
 .cabecera-index {
 	flex-direction: column;
@@ -371,7 +399,7 @@ textarea {
 	color: #000;
 }
 .formLogin {
-	width: 70%;
+	width: 80%;
 }
 .cabecera-index p {
 	font-size: 1.5em;

@@ -28,6 +28,7 @@ $data = existe("users.json");
 function registrar($datos,$db,$photo){
 if ($datos) {
         $datos['clave'] = password_hash($datos['clave'],PASSWORD_DEFAULT);
+        $datos['clave2'] = password_hash($datos['clave2'],PASSWORD_DEFAULT);
         $datos['photo'] = $photo;
         $guardar=json_encode ($datos);
         $data= existe ($db);

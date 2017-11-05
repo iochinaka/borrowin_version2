@@ -15,11 +15,16 @@
       <?php include('headerlogin.php');?>
       </div>
         <div class="cabecera-index">
-          <h2>Login Exitoso</h2>
-          <ul>
-            <li class="nav-bar"><a href="muro_sn.php">muro</a></li>
-          </ul>
+          <h2>MURO</h2>
         </div>
+        <section class="muro">
+          <article class="producto">
+            <p>Hola</p>
+          </article>
+          <article class="amigos">
+            <p>Hola</p>
+          </article>
+        </section>
     </div>
 
 
