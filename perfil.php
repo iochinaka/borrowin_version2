@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -13,12 +12,11 @@
     <div class="container">
 
       <div class="backgroudIndex">
-      <?php include('headerlogin.php');?>
-    </div class="cabecera-index">
+        <?php include('headerlogin.php');?>
+      </div>
+      <div class="cabecera-index">
         <p>Login Exitoso</p>
-
-    </div>
-
+      </div>
 
     <footer class="">
       <img src="images/logo.svg" alt="" width="70px">

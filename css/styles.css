@@ -35,7 +35,11 @@ button {
 }
 
 .stroke {
+<<<<<<< HEAD
   -webkit-text-stroke: 1.5px white;
+=======
+	-webkit-text-stroke: 1.5px white;
+>>>>>>> 7f791711c6dfc89cf9ea3fe599250e62c737b031
 }
 
 /*---------- HEADER-------------*/
