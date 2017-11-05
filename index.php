@@ -79,6 +79,9 @@ $db = new dbMySQL();
         </div>
     </div>
 
+      </div>
+
+    <div class="container">
     <div class="cuerpo-index">
 
         <h2>¿Qué es Borrowin?</h2>
@@ -91,10 +94,6 @@ $db = new dbMySQL();
     </div>
     </div>
 
-    <footer class="">
-      <img src="images/logo.svg" alt="" width="70px">
-      <p><a href="#">Condiciones de uso</a></p>
-      <p class="footer">Borrowin 2017</p>
-    </footer>
+<?php include('footer.php');?>
   </body>
 </html>

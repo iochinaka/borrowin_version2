@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,7 +11,9 @@
   <body>
     <div class="container">
       <div class="backgroundContacto">
-        <?php include('header.php') ?>
+        <?php
+            include('header.php');
+        ?>
       </div>
 
       <div class="contactPage">
@@ -33,10 +36,6 @@
       </div>
     </div>
 
-    <footer class="">
-      <img src="images/logo.svg" alt="" width="70px">
-      <p><a href="#">Condiciones de uso</a></p>
-      <p class="footer">Borrowin 2017</p>
-    </footer>
+<?php include('footer.php');?>
   </body>
 </html>
