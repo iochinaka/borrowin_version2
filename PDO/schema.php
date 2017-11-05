@@ -2,12 +2,16 @@
 /**
  *
  */
-class EsquemaBorrowin extends AnotherClass
+class  EsquemaBorrowin
 {
-  private $esquema;
-  function __construct()
-  {
-    $this->esquema = "-- MySQL Workbench Forward Engineering
+  public static function getEsquema(){
+
+  return $esquema = "CREATE SCHEMA IF NOT EXISTS `borrowin_db` DEFAULT CHARACTER SET utf8mb4 ;
+      USE `borrowin_db`";
+    }
+  public static function getTablas(){
+
+  return $tablas = "-- MySQL Workbench Forward Engineering
 
     SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
     SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
@@ -23,9 +27,6 @@ class EsquemaBorrowin extends AnotherClass
     -- -----------------------------------------------------
     -- Schema borrowin_db
     -- -----------------------------------------------------
-    CREATE SCHEMA IF NOT EXISTS `borrowin_db` DEFAULT CHARACTER SET utf8mb4 ;
-    USE `borrowin_db` ;
-
     -- -----------------------------------------------------
     -- Table `borrowin_db`.`usuarios`
     -- -----------------------------------------------------
@@ -350,14 +351,8 @@ class EsquemaBorrowin extends AnotherClass
     SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
     SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 ";
-  }
-  public static function getEsquema()
-  {
-    return $this->esquema;
-  }
-  public function setEsquema($esquema){
-    $this->esquema = $esquema;
-  }
 }
+}
+
 
 ?>

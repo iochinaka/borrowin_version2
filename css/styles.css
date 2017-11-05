@@ -1,350 +1,433 @@
-*{
-	box-sizing: border-box;
-	margin: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
 }
+
 ol, ul {
-	list-style: none;
+  list-style: none;
 }
+
 body {
-	line-height: 1;
+  line-height: 1;
 }
+
 button {
-	background-color: #008CBA;
-	border: none;
-	color: white;
-	padding: 10px 50px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 1em;
-	border-radius: 15px;
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  padding: 10px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  border-radius: 15px;
 }
+
 .container {
+<<<<<<< HEAD
 	position: relative;
 	overflow: hidden;
 	border: solid 10px red;
+=======
+  position: relative;
+  overflow: hidden;
+>>>>>>> aa40f848e0f0237d8578f880d5845c31ea49f5d7
 }
+
 .stroke {
--webkit-text-stroke: 1.5px white;
+  -webkit-text-stroke: 1.5px white;
 }
+
 /*---------- HEADER-------------*/
+
 .nav-bar {
   display: inline-block;
-	text-align: center;
+  text-align: center;
 }
-.profile-img{
-	float: right;
-	border-radius: 50%;
-	vertical-align: middle;
-	margin-right: 2em;
-	padding: 5px;
-	height: 50px;
-	width: 50px;
+
+.profile-img {
+  float: right;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 2em;
+  padding: 5px;
+  height: 50px;
+  width: 50px;
 }
+
 .header .menu-btn {
   display: none;
 }
+
 .title-nav {
-	font-family: 'Kaushan Script', cursive;
-	font-size: 2em;
-	color: rgb(247, 204, 75);
-	display: flex;
-	align-items: center;
-	margin-top: 10px;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 2em;
+  color: rgb(247, 204, 75);
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
 }
-a.logo{
-	text-decoration: none;
-	width: auto;
-	float: left;
+
+a.logo {
+  text-decoration: none;
+  width: auto;
+  float: left;
 }
+
 .header {
-	position: fixed;
-	width: 100%;
-	z-index: 10;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
 }
+
 nav.menu {
+<<<<<<< HEAD
 	float: right;
 	width: auto;
 	display: flex;
 	align-items: center;
+=======
+  float: right;
+  width: auto;
+>>>>>>> aa40f848e0f0237d8578f880d5845c31ea49f5d7
 }
+
 header {
-	overflow: hidden;
+  overflow: hidden;
   width: 100%;
-	height: 60px;
+  height: 60px;
   border-bottom: 0.1px solid grey;
-	background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.9);
 }
+
 header.index li {
-	margin-right:50px;
-	padding: 20px;
+  margin-right: 50px;
+  padding: 20px;
 }
-#closeSesion{
-	margin-right: 10px;
+
+#closeSesion {
+  margin-right: 10px;
 }
+
 .index nav a {
-	text-decoration: none;
-	color: white;
-	font-size: 1em;
-	font-family: sans-serif;
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+  font-family: sans-serif;
 }
+
 /*----------FIN HEADER-------------*/
+
 /*----------INDEX-------------*/
+
 .backgroundIndex {
   background: url("../images/intercambio.jpg");
-	background-repeat: no-repeat;
+  background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
 }
+
 .cabecera-index {
-	position: absolute;
-	top: 10%;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .cabecera-index h2 {
-	font-family: 'Kaushan Script';
-	font-size: 4.5em;
-	color: rgb(247, 204, 75);
-	margin-bottom: 10px;
+  font-family: 'Kaushan Script';
+  font-size: 4.5em;
+  color: rgb(247, 204, 75);
+  margin-bottom: 10px;
 }
+
 .cabecera-index h3 {
-	font-family: 'Kaushan Script';
-	font-size: 3em;
-	color: #FFF;
-	margin-bottom: 40px;
+  font-family: 'Kaushan Script';
+  font-size: 3em;
+  color: #FFF;
+  margin-bottom: 40px;
 }
+
 .formLogin {
-	text-align: center;
-	color: #000;
-	background-color: rgba(53, 74, 95, 0.58);
-	padding: 10px;
-	width: 30%;
-	max-width: 300px;
-	border-radius: 15px;
-	box-shadow: 0px 0px 20px 5px rgba(0,10,20,0.90);
+  text-align: center;
+  color: #000;
+  background-color: rgba(53, 74, 95, 0.58);
+  padding: 10px;
+  width: 30%;
+  max-width: 300px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px 5px rgba(0, 10, 20, 0.90);
 }
+
 .formMigrar {
 	text-align: center;
 	color: #000;
 	background-color: rgba(53, 74, 95, 0.58);
-	padding: 10px;
-	width: 30%;
+	padding: 30px;
+	width: 80%;
 	max-width: 1000px;
 	border-radius: 15px;
 	box-shadow: 0px 0px 20px 5px rgba(0,10,20,0.90);
 }
+.migrarButtons{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 .formLogin p {
-	font-size: 1.5em;
-	font-family: 'Kaushan Script';
-	color: #000;
+  font-size: 1.5em;
+  font-family: 'Kaushan Script';
+  color: #000;
 }
+
 .formLogin div input {
-	font-size: 1em;
-	width: 60%;
-	border-radius: 10px;
+  font-size: 1em;
+  width: 60%;
+  border-radius: 10px;
 }
-.formLogin input{
-	margin-top: 2%;
-	border: 1px solid #DDDDDD;
+
+.formLogin input {
+  margin-top: 2%;
+  border: 1px solid #DDDDDD;
 }
-.formLogin input:focus{
+
+.formLogin input:focus {
   box-shadow: 0 0 5px rgba(247, 204, 75, 1);
 }
-.formLogin a{
-	text-decoration: none;
-	color: #000;
+
+.formLogin a {
+  text-decoration: none;
+  color: #000;
 }
+
 .cuerpo-index {
-	margin-top: 30px;
-	font-size: 2em;
-	font-family: 'Kaushan Script';
+  margin-top: 30px;
+  font-size: 2em;
+  font-family: 'Kaushan Script';
 }
+
 .cuerpo-index h2 {
-	font-family: 'Kaushan Script';
-	font-size: 1.5em;
-	text-align: center;
+  font-family: 'Kaushan Script';
+  font-size: 1.5em;
+  text-align: center;
 }
+
 .cuerpo-index p {
-	font-size: 0.6em;
-	text-align: center;
-	font-family: 'Marvel',sans-serif;
-	line-height: 2;
+  font-size: 0.6em;
+  text-align: center;
+  font-family: 'Marvel', sans-serif;
+  line-height: 2;
 }
+
 /*---------FIN INDEX---------*/
+
 /*----------FOOTER-------------*/
+
 footer {
-	padding: 2% 0;
-	padding-bottom: 0;
-	text-align: center;
+  padding: 2% 0;
+  padding-bottom: 0;
+  text-align: center;
 }
+
 footer a {
-	text-decoration: none;
-	color: #000;
+  text-decoration: none;
+  color: #000;
 }
+
 .footer {
-	margin-top: 10px;
-	padding: 10px;
-	background-color: rgba(0, 0, 0, 0.9);
-	color: white;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
 }
+
 /*----------FIN FOOTER-------------*/
+
 /* ------------CONTACTO----------*/
+
 .backgroundContacto {
-	height: 100vh;
+  height: 100vh;
   background-image: url(../images/contacto.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .contact_background label {
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
+
 .contact_background h2 {
   font-size: 2em;
   margin-bottom: 20px;
-	font-family: 'Kaushan Script';
-	color: rgb(247, 204, 75);
+  font-family: 'Kaushan Script';
+  color: rgb(247, 204, 75);
 }
+
 .contact_form {
-	text-align: center;
-  padding-top:5%;
+  text-align: center;
+  padding-top: 5%;
   margin: 0 10%;
   width: 80%;
-	font-family: 'Kaushan Script';
-	color: rgb(247, 204, 75);
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  font-family: 'Kaushan Script';
+  color: rgb(247, 204, 75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .contactPage {
-	position: absolute;
-	top: 10%;
-	width: 100%;
+  position: absolute;
+  top: 10%;
+  width: 100%;
 }
+
 .backgroundContactForm {
-	background-color: rgba(53, 74, 95, 0.58);
+  background-color: rgba(53, 74, 95, 0.58);
   height: 60vh;
   display: flex;
-	width: 40vw;
+  width: 40vw;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-	border-radius: 15px;
-	box-shadow: 0px 0px 20px 5px rgba(0,10,20,0.90);
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px 5px rgba(0, 10, 20, 0.90);
 }
-.contact input, textarea{
-	margin-top: 5px;
+
+.contact input, textarea {
+  margin-top: 5px;
   margin-bottom: 5px;
   border: 1px solid #DDDDDD;
   border-radius: 15px;
   font-size: 1em;
   width: 80%;
 }
+
 textarea {
-	height: 6em;
-	width: 60%;
+  height: 6em;
+  width: 60%;
 }
-.contacto input:focus, textarea:focus{
-	box-shadow: 0 0 5px rgba(247, 204, 75, 1);
+
+.contacto input:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(247, 204, 75, 1);
 }
+
 /* ----------FIN CONTACTO----------*/
+
 /* ------------ABOUT----------*/
+
 .backgroundAbout {
   height: 100vh;
   background-image: url(../images/preguntas.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
-.about h3{
-	margin-top: 10px;
-	text-align: center;
-	font-family: 'Kaushan Script', cursive;
-	margin-bottom: 10px;
-	font-size: 2em;
-	color: rgb(247, 204, 75);
+
+.about h3 {
+  margin-top: 10px;
+  text-align: center;
+  font-family: 'Kaushan Script', cursive;
+  margin-bottom: 10px;
+  font-size: 2em;
+  color: rgb(247, 204, 75);
 }
+
 .about {
-	position: absolute;
-	top: 10%;
-	width: 100%;
+  position: absolute;
+  top: 10%;
+  width: 100%;
 }
-.about_container{
-	background-color: rgba(53, 74, 95, 0.58);
+
+.about_container {
+  background-color: rgba(53, 74, 95, 0.58);
   width: 40%;
-	margin: 0 30%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin-top: 5vh;
+  margin: 0 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5vh;
   height: 70vh;
   border-radius: 15px;
-	overflow: auto;
-	box-shadow: 0px 0px 20px 5px rgba(0,10,20,0.90);
+  overflow: auto;
+  box-shadow: 0px 0px 20px 5px rgba(0, 10, 20, 0.90);
 }
-.about_container details{
+
+.about_container details {
   padding: 5px;
   font-family: Arial;
-  margin-bottom:5px;
-  width:auto;
-	text-align: center;
+  margin-bottom: 5px;
+  width: auto;
+  text-align: center;
 }
-.about_container summary{
-	display: block;
+
+.about_container summary {
+  display: block;
   font-size: 1.2em;
   cursor: pointer;
-	color: white;
+  color: white;
 }
-.about_container p{
-		color: white;
-		font-size: 1em;
+
+.about_container p {
+  color: white;
+  font-size: 1em;
 }
+
 /* ------------FIN ABOUT----------*/
+
 /* ----------REGISTRO----------*/
+
 .backgroundRegistro {
-	background: url("../images/bicicleta.jpg") no-repeat center;
+  background: url("../images/bicicleta.jpg") no-repeat center;
   background-size: cover;
   height: 100vh;
 }
+
 .formPage {
-	position: absolute;
-	top: 1%;
-	width: 100%;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	height: 70%;
+  position: absolute;
+  top: 1%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 70%;
 }
+
 .formRegistro {
-	text-align: center;
-	margin-top: 30%;
+  text-align: center;
+  margin-top: 30%;
 }
+
 .formRegistro p {
-	padding: 15px;
-	font-size: 1.5em;
-	font-family: 'Kaushan Script';
-	color: #000;
+  padding: 15px;
+  font-size: 1.5em;
+  font-family: 'Kaushan Script';
+  color: #000;
 }
+
 .formRegistro {
-	background-color: rgba(189, 189, 189, 0.6);
-	height: 400px;
-	width: 30%;
-	border-radius: 15px;
-	box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+  background-color: rgba(189, 189, 189, 0.6);
+  height: 400px;
+  width: 30%;
+  border-radius: 15px;
+  box-shadow: 0px 0px 35px 3px rgba(0, 0, 0, 0.75);
 }
+
 .formRegistro div input {
-	font-size: 1em;
-	width: 60%;
-	border-radius: 10px;
+  font-size: 1em;
+  width: 60%;
+  border-radius: 10px;
 }
+
 .formRegistro input, textarea {
   border: 1px solid #DDDDDD;
 }
+
 .formRegistro input:focus, textarea:focus {
   box-shadow: 0 0 5px rgba(247, 204, 75, 1);
   margin: 5px 1px 3px 0px;
 }
+<<<<<<< HEAD
 .formRegistro a{
 	text-decoration: none;
 	color: #000;
@@ -504,32 +587,204 @@ header nav{
 	height: 70vh;
 	margin-bottom: 0;
 	width: 90vw;
-}
-.contacto textarea {
-	min-width:180px;
-}
-/*--------FIN CONTACT----------*/
-/*--------REGISTRO----------*/
-.formRegistro {
-	margin-top: 30%;
-	width: 90%;
-}
-.texto-registro {
-	margin-top: 30%;
-	display: none;
-}
-/*--------FIN REGISTRO----------*/
-/*--------ABOUT----------*/
-.about_container{
-	width:90%;
-	margin: 0 5%;
-	margin-top: 15vh;
-}
-/*--------FIN ABOUT----------*/
+=======
 
+.formRegistro a {
+  text-decoration: none;
+  color: #000;
+>>>>>>> aa40f848e0f0237d8578f880d5845c31ea49f5d7
 }
-.backgroundPerfil{
-	background: url("../images/bicicleta.jpg") no-repeat center;
-	background-size: cover;
-	height: 100vh;
+
+.texto-registro {
+  top: 10%;
+  margin-top: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 90%;
 }
+
+.texto-registro h3 {
+  font-family: 'Kaushan Script';
+  font-size: 4.5em;
+  color: #008CBA;
+}
+
+.texto-registro p {
+  font-size: 3.5em;
+  color: #FFF;
+  text-shadow: -1px -1px 1px #000;
+}
+
+/* --------FIN REGISTRO----------*/
+}
+
+@media (max-width: 850px) {
+  .cabecera-index {
+    flex-direction: column;
+    text-align: center;
+  }
+  .profile-img {
+    height: 50px;
+    width: 50px;
+  }
+  .cabecera-index h2 {
+    font-size: 2.5em;
+  }
+  .cabecera-index h3 {
+    font-size: 2em;
+    color: #000;
+  }
+  .formLogin {
+    width: 70%;
+  }
+  .formMigrar{
+    width: 70%;
+  }
+  .migrarButtons {
+    display: flex;
+    align-items: stretch;
+    align-content: space-around;
+    flex-direction: column;
+    flex-flow: column wrap;
+  }
+  .migrarButtons button{
+    margin: 15px;
+  }
+  .cabecera-index p {
+    font-size: 1.5em;
+  }
+  .cabecera-index a {
+    font-size: 1.2em;
+  }
+  .cabecera-index label {
+    font-size: 1.3em;
+  }
+  /*--------HEADER----------*/
+  .title-nav {
+    margin-top: 5px;
+    margin-left: 15px;
+  }
+  .menu-icon {
+    margin-top: 30px;
+    margin-right: 15px;
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 0;
+    position: relative;
+  }
+  header nav {
+    display: none;
+  }
+  .menu-icon .navicon {
+    background: #fff;
+    display: block;
+    height: 3px;
+    position: relative;
+    width: 30px;
+  }
+  .menu-icon .navicon:before, .menu-icon .navicon:after {
+    background: #fff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  .menu-icon .navicon:before {
+    top: 5px;
+  }
+  .menu-icon .navicon:after {
+    top: -5px;
+  }
+  .menu-btn:checked~.menu {
+    display: block;
+    position: absolute;
+    top: 10vh;
+    width: auto;
+    max-width: 200px;
+    background-color: rgba(0, 0, 0, 0.9);
+    right: 0;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px 5px rgba(0, 10, 20, 0.90);
+  }
+  .menu-btn:checked~ul {
+    height: 800px;
+  }
+  .menu-btn:checked~.menu li {
+    display: block;
+    float: none;
+    margin: 0;
+    padding-top: 5%;
+    font-size: 1.2em;
+  }
+  .menu-btn:checked~.menu-icon .navicon {
+    background: transparent;
+  }
+  .menu-btn:checked~.menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  .menu-btn:checked~.menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  .menu-btn:checked~.menu-icon:not(.steps) .navicon:before, .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+  /*--------FIN HEADER----------*/
+  /*--------CONTACT----------*/
+  .backgroundContactForm {
+    margin-top: 5vh;
+    height: 70vh;
+    margin-bottom: 0;
+    width: 90vw;
+  }
+  .contacto textarea {
+    min-width: 180px;
+  }
+  /*--------FIN CONTACT----------*/
+  /*--------REGISTRO----------*/
+  .formRegistro {
+    margin-top: 30%;
+    width: 90%;
+  }
+  .texto-registro {
+    margin-top: 30%;
+    display: none;
+  }
+  /*--------FIN REGISTRO----------*/
+  /*--------ABOUT----------*/
+  .about_container {
+    width: 90%;
+    margin: 0 5%;
+    margin-top: 15vh;
+  }
+  /*--------FIN ABOUT----------*/
+}
+
+.backgroundPerfil {
+  background: url("../images/bicicleta.jpg") no-repeat center;
+  background-size: cover;
+  height: 100vh;
+}
+
+@media (max-width: 480px) {
+  .cabecera-index h2 {
+    text-align: center;
+    font-size: 2.5em;
+  }
+  .formMigrar{
+    width: 80vw;
+  }
+  .migrarButtons{
+    display: flex;
+    align-items: stretch;
+    align-content: space-around;
+    flex-direction: column;
+    flex-flow: column wrap;
+  }
+  .migrarButtons button{
+    margin: 10px;
+  }

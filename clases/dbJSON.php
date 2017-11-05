@@ -29,21 +29,17 @@ class dbJSON extends db {
 	}
 
   public function traerTodosLosUsuarios() {
-		$archivo = fopen($this->arch, "r");
+    $i = 1;
+    $userDb = json_decode(file_get_contents($this->arch), true);
 
-		$linea = fgets($archivo);
-
-		$usuarios = [];
-
-		while($linea != false) {
-
-			$array = json_decode($linea, true);
-			$usuarios[] = new Usuario($array["nombre"], $array["email"], $array["password"], $array["edad"], $array["pais"], $array["id"]);
-
-			$linea = fgets($archivo);
-		}
-
-		return $usuarios;
+    foreach ($userDb as $usuarios => $mail) {
+      $user["mail"] = "$usuarios";
+      foreach ($mail as $datos => $dato) {
+        $user[$datos] = $dato;
+      }
+      $arrayUser[] = new Usuario($user["nombre"], $user["mail"], $user["clave"], $user["photo"],null,null,null,$i++);
+    }
+    return $arrayUser;
 	}
 
   function registrar(Usuario $usuario){

@@ -1,44 +1,25 @@
 <?php
 require_once("./clases/dbMySQL.php");
-//
+require_once("./clases/dbJSON.php");
+require_once("./clases/session.php");
 
-      if (isset($_COOKIE['username'])) {
-            $_SESSION['email'] = $_COOKIE['username'];
-            // $sessionId = session_id();
-            // update_user_session($usuario, $db, $sessionId);
-            header('Location: perfil.php');
-      } else {
 
-        // if (isset($_POST['enviar'])) {
-        //   if (!buscar_usuario_login($usuario, $clave, $db)){
-        //     $errores['usuario_error']="Usuario o clave incorrecta";
-        //   }
-        if (isset($_POST['enviar'])) {
-          session_start();
-          $db = new dbMySQL();
-          $validar = new Validator();
-          $errores = $validar->validarLogin($db, $_POST);
-
-          if (count($errores) == 0) {
-            if($_POST["recordarme"]=='1' || $_POST["recordarme"]=='on'){
-              Session::setearCookie();
-              // $hour = time() + 3600;
-              // setcookie('username', $_POST['usuario'], $hour);
-            }
-              $_SESSION['email'] = $_POST['usuario'];
-              $usr = $db->traerPorEmail($_POST['usuario']);
-              header('Location: perfil.php');
-          }
-
-          // session_start();
-          // $_SESSION['email'] = $usuario;
-          // $sessionId = session_id();
-          // update_user_session($usuario, $db, $sessionId);
-          // header('Location: perfil.php');
+        if (isset($_POST['createDB'])) {
+          dbMySQL::crearDb();
         }
-      }
-
-
+        if (isset($_POST['createTable'])) {
+          dbMySQL::crearTablas();
+        }
+        if (isset($_POST['insertUser'])) {
+          $dbJson = new dbJSON();
+          $dbMysql = new dbMySQL();
+          $arrayUser = $dbJson->traerTodosLosUsuarios();
+          foreach ($arrayUser as $usuarios => $usuario) {
+            $dbMysql->guardarUsuario($usuario);
+          }
+          $_SESSION['estado'] = "Migración finalizada!";
+          header( "refresh:3; url=index.php" );
+        }
 
 ?>
 
@@ -56,25 +37,31 @@ require_once("./clases/dbMySQL.php");
     <div class="container">
 
       <div class="backgroundIndex">
-      <?php include('header.php');?>
       </div>
       <div class="cabecera-index">
         <div>
           <h2>Prestalo con GANAS</h2>
-          <h3>Lo queres, lo pedis, lo tenes!</h3>
         </div>
         <div class="formMigrar">
-          <p>Inicia Sesion</p>
-          <form action="index.php" method="post">
-            <input id="recordarme" type="checkbox" name="recordarme">
-            <label for="recordarme">Recordarme</label>
-            <br><br>
-            <button type="submit" name="enviar" value="">Iniciar</button>
-            <br>
-            <a href="#">¿Has olvidado tu contraseña?</a>
-            <br>
-            <a href="formulario.php">¿No estás registrado? Crea tu cuenta.</a>
+          <p>Restore Data Base</p>
+          <br>
+          <form action="#" method="post">
+            <div class="migrarButtons">
+              <button type="submit" name="createDB" value="">Crear base de datos</button>
+              <br><br>
+              <button type="submit" name="createTable" value="">Crear Tablas</button>
+              <br><br>
+              <button type="submit" name="insertUser" value="">Migrar Usuarios</button>
+              <br>
+            </div>
           </form>
+          <br>
+          <?php if (isset($_SESSION['estado'])): ?>
+            <?php echo $var = (isset($_SESSION['estado'])) ? $_SESSION['estado'] : $_SESSION['errorDB']; ?>
+            <?php if (session_status() == 2): ?>
+              <?php session_destroy(); ?>
+            <?php endif; ?>
+          <?php endif; ?>
         </div>
     </div>
 

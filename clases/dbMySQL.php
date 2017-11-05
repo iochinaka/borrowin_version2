@@ -2,7 +2,7 @@
 
 require_once("db.php");
 require_once("usuario.php");
-require_once("schema.php");
+require_once("./PDO/schema.php");
 
 class dbMySQL extends db
 {
@@ -14,8 +14,57 @@ class dbMySQL extends db
         $user = "root";
         $pass = "";
 
-        $this->conn = new PDO($dsn, $user, $pass);
+
+        try {
+          $this->conn = new PDO($dsn, $user, $pass);
+
+        } catch (PDOException $e) {
+          session_start();
+          $_SESSION['errorDB'] = 'Falló la conexión: ' . $e->getMessage();
+          header('Location: migrardb.php');
+
+        }
+
     }
+
+    public static function crearDB()
+    {
+      session_start();
+      $sql = EsquemaBorrowin::getEsquema();
+      $dsn = "mysql:host=localhost;port=3306";
+      $user = "root";
+      $pass = "";
+
+            try {
+                $dbh = new PDO($dsn, $user, $pass);
+
+                $dbh->exec($sql);
+
+            } catch (PDOException $e) {
+              $_SESSION['errorDB'] = 'No se pudo crear la base de datos: ' . $e->getMessage();
+            }
+            $_SESSION['estado'] = "La base fue creada correctamente!";
+    }
+    public static function crearTablas()
+    {
+      session_start();
+      $sql = EsquemaBorrowin::getTablas();
+      $dsn = "mysql:host=localhost;port=3306;dbname=borrowin_db";
+      $user = "root";
+      $pass = "";
+
+            try {
+                $dbh = new PDO($dsn, $user, $pass);
+
+                $dbh->exec($sql);
+
+            } catch (PDOException $e) {
+              $_SESSION['errorDB'] = 'Error al crear las tablas: ' . $e->getMessage();
+            }
+            $_SESSION['estado'] = "Las tablas se crearon correctamente!";
+
+    }
+
 
     public function traerPorEmail($email)
     {
