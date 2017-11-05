@@ -152,11 +152,16 @@ header.index li {
 	text-align: center;
 	color: #000;
 	background-color: rgba(53, 74, 95, 0.58);
-	padding: 10px;
-	width: 30%;
+	padding: 30px;
+	width: 80%;
 	max-width: 1000px;
 	border-radius: 15px;
 	box-shadow: 0px 0px 20px 5px rgba(0,10,20,0.90);
+}
+.migrarButtons{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .formLogin p {
   font-size: 1.5em;
@@ -438,6 +443,7 @@ textarea {
 }
 
 /* --------FIN REGISTRO----------*/
+}
 
 @media (max-width: 850px) {
   .cabecera-index {
@@ -457,6 +463,19 @@ textarea {
   }
   .formLogin {
     width: 70%;
+  }
+  .formMigrar{
+    width: 70%;
+  }
+  .migrarButtons {
+    display: flex;
+    align-items: stretch;
+    align-content: space-around;
+    flex-direction: column;
+    flex-flow: column wrap;
+  }
+  .migrarButtons button{
+    margin: 15px;
   }
   .cabecera-index p {
     font-size: 1.5em;
@@ -575,3 +594,22 @@ textarea {
   background-size: cover;
   height: 100vh;
 }
+
+@media (max-width: 480px) {
+  .cabecera-index h2 {
+    text-align: center;
+    font-size: 2.5em;
+  }
+  .formMigrar{
+    width: 80vw;
+  }
+  .migrarButtons{
+    display: flex;
+    align-items: stretch;
+    align-content: space-around;
+    flex-direction: column;
+    flex-flow: column wrap;
+  }
+  .migrarButtons button{
+    margin: 10px;
+  }

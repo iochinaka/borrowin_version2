@@ -3,44 +3,27 @@ require_once("./clases/dbMySQL.php");
 require_once("./clases/validData.php");
 require_once("./clases/session.php");
 require_once('funciones.php');
-// $usuario= isset ($_POST['usuario']) ? $_POST['usuario'] : null;
-// $clave= isset ($_POST['clave']) ? $_POST['clave'] : null;
-// $errores= array();
-//
+$db = new dbMySQL();
 
       if (isset($_COOKIE['username'])) {
+
             $_SESSION['email'] = $_COOKIE['username'];
-            // $sessionId = session_id();
-            // update_user_session($usuario, $db, $sessionId);
             header('Location: perfil.php');
       } else {
 
-        // if (isset($_POST['enviar'])) {
-        //   if (!buscar_usuario_login($usuario, $clave, $db)){
-        //     $errores['usuario_error']="Usuario o clave incorrecta";
-        //   }
         if (isset($_POST['enviar'])) {
-          session_start();
-          $db = new dbMySQL();
           $validar = new Validator();
           $errores = $validar->validarLogin($db, $_POST);
 
           if (count($errores) == 0) {
+            session_start();
             if($_POST["recordarme"]=='1' || $_POST["recordarme"]=='on'){
               Session::setearCookie();
-              // $hour = time() + 3600;
-              // setcookie('username', $_POST['usuario'], $hour);
             }
               $_SESSION['email'] = $_POST['usuario'];
               $usr = $db->traerPorEmail($_POST['usuario']);
               header('Location: perfil.php');
           }
-
-          // session_start();
-          // $_SESSION['email'] = $usuario;
-          // $sessionId = session_id();
-          // update_user_session($usuario, $db, $sessionId);
-          // header('Location: perfil.php');
         }
       }
 
