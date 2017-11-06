@@ -9,15 +9,12 @@
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Courgette|Anton|Baloo+Tamma|Marvel|Katibeh" rel="stylesheet">
     <title>Borrowin</title>
   </head>
-
-
   <body>
     <div class="container">
-
       <div class="backgroundIndex">
       <?php include('headerlogin.php');?>
       </div class="cabecera-index">
-      
+
       <div class="cuerpo-index">
         <h2>Login Exitoso</h2>
       </div>
@@ -48,17 +45,17 @@
           <img src="images/profile/<?php echo $pic; ?>" alt="<?php echo $usr->getNombre(); ?>">
         </div producto>
       </div>
-      
+
       <footer>
-        
+
         <img src="images/logo.svg" alt="" width="70px">
         <p>
           <a href="#">Condiciones de uso</a>
         </p>
         <p class="footer">Borrowin 2017</p>
-        
+
       </footer>
-    
+
     </div>
 
 

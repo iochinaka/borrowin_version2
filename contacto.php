@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,11 +10,8 @@
   <body>
     <div class="container">
       <div class="backgroundContacto">
-        <?php
-            include('header.php');
-        ?>
+        <?php include('header.php');?>
       </div>
-
       <div class="contactPage">
         <div class="contact_form">
           <div class="backgroundContactForm">
@@ -35,7 +31,6 @@
         </div>
       </div>
     </div>
-
 <?php include('footer.php');?>
   </body>
 </html>
