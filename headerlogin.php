@@ -32,11 +32,14 @@
       <!-- <a class="logo" href=""><h1 class="h1_nav">Borrowin!</h1></a> -->
     <nav class="menu">
       <ul>
-        <li class="nav-bar"><a href="#">Perfil</a></li>
+        <li class="nav-bar"><a href="perfil.php">Mi Perfil</a></li>
         <li class="nav-bar"><a href="#">Contacto</a></li>
-        <!-- <li class="nav-bar"><a href="cerrar_sesion.php">Cerrar Sesión</a></li> -->
-        <li id="closeSesion" class="nav-bar"><a href="cerrar_sesion.php">Cerrar Sesión</a></li>
-
+        <li class="nav-bar"><a href="#">Preguntas Frecuentes</a></li>
+        <li class="little-nav-bar"><a href="#">Mis productos</a></li>
+        <li class="little-nav-bar"><a href="#">Me prestaron</a></li>
+        <li class="little-nav-bar"><a href="#">Novedades</a></li>
+        <li class="little-nav-bar"><a href="#">Buscar</a></li>
+        <li class="little-nav-bar"><a href="cerrar_sesion.php">Cerrar sesión</a></li>
       </ul>
     </nav>
   </header>

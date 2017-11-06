@@ -4,7 +4,6 @@ require_once("./clases/validData.php");
 require_once('funciones.php');
 
 
-
 if (isset($_POST['registrar'])) {
     $db = new dbMySQL();
     $validar = new Validator();
@@ -48,7 +47,7 @@ if (isset($_POST['registrar'])) {
               <input id="usuario" type="text" name="nombre" required value="">
               <br><br>
               <label for="email"> E-mail </label><br/>
-              <input type="email" id="email" name="email" required value="<?php echo $email ?>">
+              <input type="email" id="email" name="email" required value="">
               <br><br>
               <label for="clave" >Contraseña</label>
               <br>
@@ -80,10 +79,6 @@ if (isset($_POST['registrar'])) {
       </div>
 </div>
 
-  <footer class="">
-    <img src="images/logo.svg" alt="" width="70px">
-    <p><a href="#">Condiciones de uso</a></p>
-    <p class="footer">Borrowin 2017</p>
-  </footer>
+<?php include('footer.php');?>
   </body>
 </html>
