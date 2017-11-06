@@ -2,23 +2,25 @@
 require_once("./clases/dbMySQL.php");
 require_once("./clases/dbJSON.php");
 require_once("./clases/session.php");
-
+session_start();
 
         if (isset($_POST['createDB'])) {
-          dbMySQL::crearDb();
+            session_destroy();
+            dbMySQL::crearDb();
         }
         if (isset($_POST['createTable'])) {
-          dbMySQL::crearTablas();
+            session_destroy();
+            dbMySQL::crearTablas();
         }
         if (isset($_POST['insertUser'])) {
-          $dbJson = new dbJSON();
-          $dbMysql = new dbMySQL();
-          $arrayUser = $dbJson->traerTodosLosUsuarios();
-          foreach ($arrayUser as $usuarios => $usuario) {
-            $dbMysql->guardarUsuario($usuario);
-          }
-          $_SESSION['estado'] = "Migración finalizada!";
-          header( "refresh:3; url=index.php" );
+            $dbJson = new dbJSON();
+            $dbMysql = new dbMySQL();
+            $arrayUser = $dbJson->traerTodosLosUsuarios();
+            foreach ($arrayUser as $usuarios => $usuario) {
+                $dbMysql->guardarUsuario($usuario);
+            }
+            $_SESSION['estado'] = "Migración finalizada!";
+            header("refresh:3; url=index.php");
         }
 
 ?>
@@ -56,12 +58,10 @@ require_once("./clases/session.php");
             </div>
           </form>
           <br>
-          <?php if (isset($_SESSION['estado'])): ?>
+          <?php if (session_status() == 2): ?>
             <?php echo $var = (isset($_SESSION['estado'])) ? $_SESSION['estado'] : $_SESSION['errorDB']; ?>
-            <?php if (session_status() == 2): ?>
-              <?php session_destroy(); ?>
+            <?php session_destroy(); ?>
             <?php endif; ?>
-          <?php endif; ?>
         </div>
     </div>
 

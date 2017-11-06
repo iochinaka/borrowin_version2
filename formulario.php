@@ -2,10 +2,10 @@
 require_once("./clases/dbMySQL.php");
 require_once("./clases/validData.php");
 require_once('funciones.php');
+$db = new dbMySQL();
 
 
 if (isset($_POST['registrar'])) {
-    $db = new dbMySQL();
     $validar = new Validator();
     $errores = $validar->validarInformacion($db, $_POST, $_FILES);
 

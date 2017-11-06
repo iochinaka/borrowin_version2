@@ -6,25 +6,23 @@ require_once('funciones.php');
 $db = new dbMySQL();
 
       if (isset($_COOKIE['username'])) {
-
-            $_SESSION['email'] = $_COOKIE['username'];
-            header('Location: perfil.php');
+          $_SESSION['email'] = $_COOKIE['username'];
+          header('Location: perfil.php');
       } else {
+          if (isset($_POST['enviar'])) {
+              $validar = new Validator();
+              $errores = $validar->validarLogin($db, $_POST);
 
-        if (isset($_POST['enviar'])) {
-          $validar = new Validator();
-          $errores = $validar->validarLogin($db, $_POST);
-
-          if (count($errores) == 0) {
-            session_start();
-            if($_POST["recordarme"]=='1' || $_POST["recordarme"]=='on'){
-              Session::setearCookie();
-            }
-              $_SESSION['email'] = $_POST['usuario'];
-              $usr = $db->traerPorEmail($_POST['usuario']);
-              header('Location: perfil.php');
+              if (count($errores) == 0) {
+                  session_start();
+                  if ($_POST["recordarme"]=='1' || $_POST["recordarme"]=='on') {
+                      Session::setearCookie();
+                  }
+                  $_SESSION['email'] = $_POST['usuario'];
+                  $usr = $db->traerPorEmail($_POST['usuario']);
+                  header('Location: perfil.php');
+              }
           }
-        }
       }
 
 
@@ -60,12 +58,16 @@ $db = new dbMySQL();
               <br>
               <input id="usuario" type="text" name="usuario" required value="">
               <br>
-              <?php if (isset($errores['usuario'])){echo $errores['usuario'];}?><br/>
+              <?php if (isset($errores['usuario'])) {
+    echo $errores['usuario'];
+}?><br/>
               <label for="clave">Contraseña</label>
               <br>
               <input id="clave" type="password" name="clave" required value="">
               <br>
-              <?php if (isset($errores['clave'])){echo $errores['clave'];}?><br/>
+              <?php if (isset($errores['clave'])) {
+    echo $errores['clave'];
+}?><br/>
             </div>
             <input id="recordarme" type="checkbox" name="recordarme">
             <label for="recordarme">Recordarme</label>

@@ -16,53 +16,49 @@ class dbMySQL extends db
 
 
         try {
-          $this->conn = new PDO($dsn, $user, $pass);
-
+            $this->conn = new PDO($dsn, $user, $pass);
         } catch (PDOException $e) {
-          session_start();
-          $_SESSION['errorDB'] = 'Falló la conexión: ' . $e->getMessage();
-          header('Location: migrardb.php');
-
+            session_start();
+            $_SESSION['errorDB'] = 'Falló la conexión: ' . $e->getMessage();
+            header('Location: migrardb.php');
         }
-
     }
 
     public static function crearDB()
     {
-      session_start();
-      $sql = EsquemaBorrowin::getEsquema();
-      $dsn = "mysql:host=localhost;port=3306";
-      $user = "root";
-      $pass = "";
+        session_start();
+        $sql = EsquemaBorrowin::getEsquema();
+        $dsn = "mysql:host=localhost;port=3306";
+        $user = "root";
+        $pass = "";
 
-            try {
-                $dbh = new PDO($dsn, $user, $pass);
+        try {
+            $dbh = new PDO($dsn, $user, $pass);
 
-                $dbh->exec($sql);
-
-            } catch (PDOException $e) {
-              $_SESSION['errorDB'] = 'No se pudo crear la base de datos: ' . $e->getMessage();
-            }
-            $_SESSION['estado'] = "La base fue creada correctamente!";
+            $dbh->exec($sql);
+        } catch (PDOException $e) {
+            $_SESSION['errorDB'] = 'No se pudo crear la base de datos: ' . $e->getMessage();
+            return;
+        }
+        $_SESSION['estado'] = "La base fue creada correctamente!";
     }
     public static function crearTablas()
     {
-      session_start();
-      $sql = EsquemaBorrowin::getTablas();
-      $dsn = "mysql:host=localhost;port=3306;dbname=borrowin_db";
-      $user = "root";
-      $pass = "";
+        session_start();
+        $sql = EsquemaBorrowin::getTablas();
+        $dsn = "mysql:host=localhost;port=3306;dbname=borrowin_db";
+        $user = "root";
+        $pass = "";
 
-            try {
-                $dbh = new PDO($dsn, $user, $pass);
+        try {
+            $dbh = new PDO($dsn, $user, $pass);
 
-                $dbh->exec($sql);
-
-            } catch (PDOException $e) {
-              $_SESSION['errorDB'] = 'Error al crear las tablas: ' . $e->getMessage();
-            }
-            $_SESSION['estado'] = "Las tablas se crearon correctamente!";
-
+            $dbh->exec($sql);
+        } catch (PDOException $e) {
+            $_SESSION['errorDB'] = 'Error al crear las tablas: ' . $e->getMessage();
+            return;
+        }
+        $_SESSION['estado'] = "Las tablas se crearon correctamente!";
     }
 
 
@@ -198,9 +194,10 @@ class dbMySQL extends db
     //   return ($session == $seId) ? TRUE : FALSE;
     //
     // }
-    function buscar_pic($user, $db){
-    $userDb = json_decode(file_get_contents($db), true);
-    return $userDb[$user]["photo"];
+    public function buscar_pic($user, $db)
+    {
+        $userDb = json_decode(file_get_contents($db), true);
+        return $userDb[$user]["photo"];
     }
 
     // function update_user_session($user, $db, $sessionId){
