@@ -125,7 +125,7 @@ class Usuario
 
         $today = new DateTime("now");
         $name_pic = date_format($today, "YmdHis")."_profile.";
-        $path_and_name = dirname(__FILE__)."/images/profile/" . $name_pic . $ext;
+        $path_and_name = "images/profile/" . $name_pic . $ext;
         move_uploaded_file($picture, $path_and_name);
 
 
